@@ -1,0 +1,21 @@
+body #buddypress,
+#wp-bp-groups-description-editor-container,
+#wp-bp-activities-content-editor-container,
+#wp-message_content-editor-container,
+.buddypress-wrap .standard-form .wp-editor-container {
+  border: 0;
+}
+body #buddypress .EasyMDEContainer .editor-toolbar,
+#wp-bp-groups-description-editor-container .EasyMDEContainer .editor-toolbar,
+#wp-bp-activities-content-editor-container .EasyMDEContainer .editor-toolbar,
+#wp-message_content-editor-container .EasyMDEContainer .editor-toolbar,
+.buddypress-wrap .standard-form .wp-editor-container .EasyMDEContainer .editor-toolbar {
+  border-radius: 0;
+}
+body #buddypress .EasyMDEContainer .CodeMirror,
+#wp-bp-groups-description-editor-container .EasyMDEContainer .CodeMirror,
+#wp-bp-activities-content-editor-container .EasyMDEContainer .CodeMirror,
+#wp-message_content-editor-container .EasyMDEContainer .CodeMirror,
+.buddypress-wrap .standard-form .wp-editor-container .EasyMDEContainer .CodeMirror {
+  border-radius: 0;
+}
