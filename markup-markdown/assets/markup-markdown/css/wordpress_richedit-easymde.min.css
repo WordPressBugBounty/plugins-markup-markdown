@@ -155,12 +155,18 @@ html[dir=rtl] .editor-toolbar button.preview:last-child, html[dir=rtl] .editor-t
   color: #7f8c8d;
   font-style: italic;
 }
+.editor-preview div[data-pointer] {
+  width: 100%;
+  margin: 0;
+  padding: 1px 0;
+}
 .editor-preview pre {
   margin: 0 0 1.5rem 0;
   padding: 0.25rem;
 }
 .editor-preview pre code {
   background: transparent;
+  display: block;
 }
 .editor-preview table {
   margin: 0 0 1.5rem 0;

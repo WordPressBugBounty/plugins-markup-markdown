@@ -85,7 +85,7 @@ class Comments {
 	 * @return Void
 	 */
 	public function add_tabmenu() {
-		echo "\t\t\t\t\t\t<li><a href=\"#tab-comments\" class=\"mmd-ico ico-square\">" . __( 'Comments' ) . "</a></li>\n";
+		echo "\t\t\t\t\t\t<li><a href=\"#tab-comments\" class=\"mmd-ico ico-dialog\">" . __( 'Comments' ) . "</a></li>\n";
 	}
 
 

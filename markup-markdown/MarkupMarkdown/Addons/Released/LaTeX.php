@@ -5,7 +5,7 @@ namespace MarkupMarkdown\Addons\Released;
 defined( 'ABSPATH' ) || exit;
 
 
-class Latex {
+final class Latex {
 
 
 	private $prop = array(
