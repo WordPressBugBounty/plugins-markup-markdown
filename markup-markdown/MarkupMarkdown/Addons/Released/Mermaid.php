@@ -20,7 +20,7 @@ final class Mermaid {
 
 
 	public function __construct() {
-		if ( defined( 'MMD_ADDONS' ) && in_array( $this->prop[ 'slug' ], MMD_ADDONS ) === FALSE ) :
+		if ( ! defined( 'MMD_ADDONS' ) || ( defined( 'MMD_ADDONS' ) && in_array( $this->prop[ 'slug' ], MMD_ADDONS ) === false ) ) :
 			$this->prop[ 'active' ] = 0;
 			return false; # Addon has been desactivated
 		endif;
@@ -78,6 +78,7 @@ final class Mermaid {
 			$my_cnf[ 'MMD_USE_MERMAID' ][ 1 ] = isset( $my_cnf[ 'mermaid_engine' ] ) ? htmlspecialchars( $my_cnf[ 'mermaid_engine' ] ) : '';
 			$my_cnf[ 'MMD_USE_MERMAID' ][ 2 ] = isset( $my_cnf[ 'mermaid_front' ] ) ? (int)$my_cnf[ 'mermaid_front' ] : '';
 		endif;
+		unset( $my_cnf[ 'mermaid_active' ] );
 		unset( $my_cnf[ 'mermaid_engine' ] );
 		unset( $my_cnf[ 'mermaid_front' ] );
 		return $my_cnf;

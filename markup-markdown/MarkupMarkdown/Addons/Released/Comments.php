@@ -4,7 +4,7 @@ namespace MarkupMarkdown\Addons\Released;
 
 defined( 'ABSPATH' ) || exit;
 
-class Comments {
+final class Comments {
 
 
 	private $prop = array(
@@ -22,7 +22,7 @@ class Comments {
 
 	public function __construct() {
 		$this->comments_tags_conf = mmd()->conf_blog_prefix . 'conf_comments_tags.json';
-		if ( defined( 'MMD_ADDONS' ) && in_array( $this->prop[ 'slug' ], MMD_ADDONS ) === FALSE ) :
+		if ( ! defined( 'MMD_ADDONS' ) || ( defined( 'MMD_ADDONS' ) && in_array( $this->prop[ 'slug' ], MMD_ADDONS ) === false ) ) :
 			$this->prop[ 'active' ] = 0;
 			return false; # Addon has been desactivated
 		endif;

@@ -1,7 +1,7 @@
 === Markup Markdown ===
 Tags: Editor, Markdown
-Stable Tag: 3.18.0
-Version: 3.18.0
+Stable Tag: 3.18.1
+Version: 3.18.1
 Requires at least: 4.9
 Tested up to: 6.8.1
 Requires PHP: 5.6.0
@@ -69,6 +69,10 @@ The current version is based on components that are not compatible with assistiv
 
 == Changelog ==
 
+= 3.18.1 =
+
+Bug fix:
+- The "Comments", "LaTeX" and "Mermaid" tabs should not be displayed by default with a fresh install as those addons are optional
 
 = 3.18.0 =
 
