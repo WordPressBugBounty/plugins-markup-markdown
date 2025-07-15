@@ -1,7 +1,7 @@
 === Markup Markdown ===
 Tags: Editor, Markdown
-Stable Tag: 3.19.0
-Version: 3.19.0
+Stable Tag: 3.19.1
+Version: 3.19.1
 Requires at least: 4.9
 Tested up to: 6.8
 Requires PHP: 5.6.0
@@ -68,6 +68,12 @@ The current version is based on components that are not compatible with assistiv
 
 
 == Changelog ==
+
+= 3.19.1 =
+
+Bug fixes:
+- Fixing wrong permission with cache folders
+- Bumping the revision number of a few assets
 
 = 3.19.0 =
 

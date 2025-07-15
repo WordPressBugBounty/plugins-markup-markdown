@@ -325,12 +325,12 @@ final class Settings {
 	 */
 	public function enqueue_setting_scripts() {
 		$plugin_uri = mmd()->plugin_uri;
-		wp_enqueue_style( 'markup_markdown-options', $plugin_uri . '/assets/markup-markdown/css/plugin_options.min.css', [], '1.0.6' );
-		wp_enqueue_style( 'markup_markdown-easymde_editor',  $plugin_uri . 'assets/easy-markdown-editor/dist/easymde.min.css', [], '2.19.102' );
+		wp_enqueue_style( 'markup_markdown-options', $plugin_uri . '/assets/markup-markdown/css/plugin_options.min.css', [], '1.0.7' );
+		wp_enqueue_style( 'markup_markdown-easymde_editor',  $plugin_uri . 'assets/easy-markdown-editor/dist/easymde.min.css', [], '2.19.1011' );
 		foreach ( [ 'core', 'tabs', 'draggable', 'droppable', 'sortable', 'button' ] as $jq_component ) :
 			wp_enqueue_script( 'jquery-ui-' . $jq_component );
 		endforeach;
-		wp_enqueue_script( 'markup_markdown-options', $plugin_uri . '/assets/markup-markdown/js/plugin_options.min.js', [ 'jquery-ui-tabs' ], '1.0.6', true );
+		wp_enqueue_script( 'markup_markdown-options', $plugin_uri . '/assets/markup-markdown/js/plugin_options.min.js', [ 'jquery-ui-tabs' ], '1.0.7', true );
 	}
 
 
