@@ -148,13 +148,26 @@ final class Support {
 			return $typenow;
 		elseif ( $current_screen && $current_screen->post_type ) :
 			return $current_screen->post_type;
-		elseif ( isset( $_REQUEST[ 'post_type' ] ) ) :
-			return sanitize_key( $_REQUEST[ 'post_type' ] );
-		elseif ( isset( $_REQUEST[ 'post' ] ) && function_exists( 'get_post_type' ) ) :
-			return get_post_type( (int)$_REQUEST[ 'post' ] );
-		else :
-			return NULL;
 		endif;
+		$my_post_type = filter_input( INPUT_GET, 'post_type', FILTER_SANITIZE_FULL_SPECIAL_CHARS );
+		if ( isset( $my_post_type ) && ! empty( $my_post_type ) ) :
+			return $my_post_type;
+		endif;
+		$my_post_type = filter_input( INPUT_POST, 'post_type', FILTER_SANITIZE_FULL_SPECIAL_CHARS );
+		if ( isset( $my_post_type ) && ! empty( $my_post_type ) ) :
+			return $my_post_type;
+		endif;
+		if ( function_exists( 'get_post_type' ) ) :
+			$my_post = filter_input( INPUT_GET, 'post', FILTER_VALIDATE_INT );
+			if ( isset( $my_post ) && is_numeric( $my_post ) && (int)$my_post > 0 ) :
+				return get_post_type( (int)$my_post );
+			endif;
+			$my_post = filter_input( INPUT_POST, 'post', FILTER_VALIDATE_INT );
+			if ( isset( $my_post ) && is_numeric( $my_post ) && (int)$my_post > 0 ) :
+				return get_post_type( (int)$my_post );
+			endif;
+		endif;
+		return NULL;
 	}
 
 
@@ -260,8 +273,8 @@ final class Support {
 	public function clear_post_cache( $post_ID, $post, $update ) {
 		# If a modification was made, we must clear the cache to refresh it
 		$cache_content = WP_CONTENT_DIR . '/mmd-cache/.' . get_current_network_id() . '_' . get_current_blog_id() . '_' . $post_ID . '.html';
-		if ( file_exists( $cache_content ) ) :
-			@unlink( $cache_content );
+		if ( mmd()->exists( $cache_content ) ) :
+			wp_delete_file( $cache_content );
 		endif;
 		mmd()->clear_cache( $cache_content );
 	}

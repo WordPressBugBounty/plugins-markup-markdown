@@ -76,7 +76,10 @@
 				<td>
 					<label for="mmd_lightbox">
 						<input type="checkbox" name="mmd_lightbox" id="mmd_lightbox" value="1" <?php echo (int)$my_cnf[ 'lightbox' ] > 0 ? 'checked="checked"' : ''; ?> />
-						<?php printf( esc_html__( 'An image inside a %1$spost%2$s or %1$spage%2$s that was linked to its original size will open in a modal (overlay on the same page) instead of a new window / tab.', 'markup-markdown' ), '<em>', '</em>', '<em>', '</em>' ); ?>
+					<?php
+						/* translators: 1,2,3,4: used for italic tags */
+						printf( esc_html__( 'An image inside a %1$spost%2$s or %1$spage%2$s that was linked to its original size will open in a modal (overlay on the same page) instead of a new window / tab.', 'markup-markdown' ), '<em>', '</em>', '<em>', '</em>' );
+					?>
 					</label>
 				</td>
 			</tr>
@@ -87,7 +90,10 @@
 				<td>
 					<label for="mmd_masonry">
 						<input type="checkbox" name="mmd_masonry" id="mmd_masonry" value="1" <?php echo (int)$my_cnf[ 'masonry' ] > 0 ? 'checked="checked"' : ''; ?>>
-						<?php printf( esc_html__( 'Transform a bullet list of images as a 2 waterfall column layout when the %1$sphoto gallery%2$s post format is selected.', 'markup-markdown' ), '<em>', '</em>' ); ?>
+					<?php
+						/* translators: 1,2,3,4: used for italic tags */
+						printf( esc_html__( 'Transform a bullet list of images as a 2 waterfall column layout when the %1$sphoto gallery%2$s post format is selected.', 'markup-markdown' ), '<em>', '</em>' );
+					?>
 					</label>
 				</td>
 			</tr>
@@ -118,9 +124,9 @@
 ?>
 					<div class="ui-widget ui-helper-clearfix">
 						<div id="my_toolbar" class="editor-toolbar ui-widget-content ui-state-default">
-							<h4 class="ui-widget-header"><?php _e( 'Current Toolbar (Preview)', 'markup-markdown' ); ?></h4>
+							<h4 class="ui-widget-header"><?php esc_html_e( 'Current Toolbar (Preview)', 'markup-markdown' ); ?></h4>
 							<p>
-								<?php _e( 'You can sort the buttons and remove some of them if need.', 'markup-markdown' ); ?>
+								<?php esc_html_e( 'You can sort the buttons and remove some of them if need.', 'markup-markdown' ); ?>
 							</p>
 							<ul id="my_buttons" class="connected">
 <?php
@@ -129,46 +135,46 @@
 	foreach( $my_toolbar->active_buttons as $button ) :
 		$toolbar_fields[] = $button[ 'slug' ];
 ?>
-								<li data-slug="<?php echo $button[ 'slug' ]; ?>" class="ui-widget-content button_<?php echo $button[ 'slug' ];  ?>">
-									<span class="ui-widget-item"<?php if ( isset( $button[ 'tooltip' ] ) && ! empty( $button[ 'tooltip' ] ) ) : ?> title="<?php echo $button[ 'tooltip' ]; ?>"<?php endif; ?>>
-										<h5 class="ui-widget-header"><?php if ( isset( $button[ 'label' ] ) ) : echo $button[ 'label' ]; endif; ?></h5>
+								<li data-slug="<?php echo esc_attr( $button[ 'slug' ] ); ?>" class="ui-widget-content <?php echo esc_attr( 'button_' . $button[ 'slug' ] ); ?>">
+									<span class="ui-widget-item"<?php if ( isset( $button[ 'tooltip' ] ) && ! empty( $button[ 'tooltip' ] ) ) : ?> title="<?php echo esc_attr( $button[ 'tooltip' ] ); ?>"<?php endif; ?>>
+										<h5 class="ui-widget-header"><?php if ( isset( $button[ 'label' ] ) ) : echo esc_attr( $button[ 'label' ] ); endif; ?></h5>
 									<?php
 										if ( strpos( $button[ 'slug' ], "pipe" ) !== FALSE ) :
 											echo "|";
 										else :
-											echo "<button class=\"" . str_replace( 'mmd-', 'mmd_', str_replace( '_', '-', $button[ 'slug' ] ) ) . "\">" . $button[ 'icon' ] . "</button>";
+											echo "<button class=\"" . esc_attr( str_replace( 'mmd-', 'mmd_', str_replace( '_', '-', $button[ 'slug' ] ) ) ) . ' ' . $button[ 'class' ] ."\"></button>";
 										endif;
 									?>
 									</span>
 								<?php if ( strpos( $button[ 'slug' ], 'spell_check' ) === FALSE ) : ?>
-									<a href="#button_<?php echo $button[ 'slug' ]; ?>" class="ui-trash-link" title="Delete button"><i class="fa fa-times" aria-hidden="true"></i></a>
+									<a href="#button_<?php echo esc_attr( $button[ 'slug' ] ); ?>" class="ui-trash-link" title="Delete button"><i class="mmd_fa mmd_fa-times" aria-hidden="true"></i></a>
 								<?php endif; ?>
 								</li>
 <?php
 	endforeach;
 ?>
 							</ul>
-							<p><small><?php _e( 'Buttons related to languages are represented as a single grey globe button, and will only be displayed if the related spell checkers are enabled.', 'markup-markdown' ); ?></small></p>
+							<p><small><?php esc_html_e( 'Buttons related to languages are represented as a single grey globe button, and will only be displayed if the related spell checkers are enabled.', 'markup-markdown' ); ?></small></p>
 						</div>
 						<div id="default_buttons" class="editor-toolbar">
-							<h4 class="ui-widget-header"><?php _e( 'Available Buttons', 'markup-markdown' ); ?></h4>
-							<p><?php _e( 'You can drag the following buttons and drop them to the toolbar above.', 'markup-markdown' ); ?></p>
+							<h4 class="ui-widget-header"><?php esc_html_e( 'Available Buttons', 'markup-markdown' ); ?></h4>
+							<p><?php esc_html_e( 'You can drag the following buttons and drop them to the toolbar above.', 'markup-markdown' ); ?></p>
 							<ul id="toolbar_buttons" class="connected ui-helper-clearfix">
 <?php
 	foreach( $my_toolbar->unused_buttons as $button ) :
 ?>
-								<li data-slug="<?php echo $button[ 'slug' ]; ?>" class="ui-widget-content button_<?php echo $button[ 'slug' ]; ?>">
-									<span class="ui-widget-item"<?php if ( isset( $button[ 'tooltip' ] ) && ! empty( $button[ 'tooltip' ] ) ) : ?> title="<?php echo $button[ 'tooltip' ]; ?>"<?php endif; ?>>
-										<h5 class="ui-widget-header"><?php if ( isset( $button[ 'label' ] ) ) : echo $button[ 'label' ]; endif; ?></h5>
+								<li data-slug="<?php echo esc_attr( $button[ 'slug' ] ); ?>" class="ui-widget-content button_<?php echo esc_attr( $button[ 'slug' ] ); ?>">
+									<span class="ui-widget-item"<?php if ( isset( $button[ 'tooltip' ] ) && ! empty( $button[ 'tooltip' ] ) ) : ?> title="<?php echo esc_attr( $button[ 'tooltip' ] ); ?>"<?php endif; ?>>
+										<h5 class="ui-widget-header"><?php if ( isset( $button[ 'label' ] ) ) : echo esc_html( $button[ 'label' ] ); endif; ?></h5>
 									<?php
 										if ( strpos( $button[ 'slug' ], "pipe" ) !== FALSE ) :
 											echo "|";
 										else :
-											echo "<button class=\"" . str_replace( 'mmd-', 'mmd_', str_replace( '_', '-', $button[ 'slug' ] ) ) . "\">" . $button[ 'icon' ] . "</button>";
+											echo "<button class=\"" . esc_attr( str_replace( 'mmd-', 'mmd_', str_replace( '_', '-', $button[ 'slug' ] ) ) ) . ' ' . $button[ 'class' ] ."\"></button>";
 										endif;
 									?>
 									</span>
-									<a href="#button_<?php echo $button[ 'slug' ]; ?>" class="ui-trash-link" title="Delete button"><i class="fa fa-times" aria-hidden="true"></i></a>
+									<a href="#<?php echo esc_attr( 'button_' . $button[ 'slug' ] ); ?>" class="ui-trash-link" title="Delete button"><i class="mmd_fa mmd_fa-times" aria-hidden="true"></i></a>
 								</li>
 <?php
 	endforeach;
@@ -176,7 +182,7 @@
 							</ul>
 						</div>
 					</div>
-					<input type="hidden" name="mmd_toolbar" id="mmd_toolbar" value="<?php echo implode( ",", $toolbar_fields ); ?>" />
+					<input type="hidden" name="mmd_toolbar" id="mmd_toolbar" value="<?php echo esc_attr( implode( ",", $toolbar_fields ) ); ?>" />
 				</td>
 			</tr>
 

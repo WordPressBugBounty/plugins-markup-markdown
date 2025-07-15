@@ -15,7 +15,9 @@ final class Parser {
 
 	private $mmd_allowed = 1;
 
-	private $cache_enabled = 0;
+	public $cache_enabled = 0;
+
+	public $post_cache_dir = '';
 
 	public function __construct() {
 		if ( MMD_SUPPORT_ENABLED > 0 ) :
@@ -42,15 +44,22 @@ final class Parser {
 	 * @return String HTML rendered from the markdown
 	 */
 	private function static_html( $content ) {
-		$cache_content = mmd()->cache_blog_prefix . get_the_id() . '.html';
-		if ( $this->preview !== 'true' && file_exists( $cache_content ) ) :
+		if ( empty( $this->post_cache_dir ) ) :
+			$this->post_cache_dir = mmd()->cache_dir . '/.posts/';
+			if ( ! mmd()->exists( $this->post_cache_dir ) ) :
+				mmd()->mkdir( $this->post_cache_dir );
+			endif;
+			$this->post_cache_dir .= mmd()->curr_blog;
+		endif;
+		$cache_content = $this->post_cache_dir . '_' . get_the_id() . '.html';
+		if ( $this->preview !== 'true' && mmd()->exists( $cache_content ) ) :
 			# Cache file already exists
-			$my_content = file_get_contents( $cache_content );
+			$my_content = mmd()->get_contents( $cache_content );
 			return $my_content;
 		else :
 			# New cache file
 			$my_content = $this->live_html( $content );
-			file_put_contents( $cache_content, $my_content );
+			mmd()->put_contents( $cache_content, $my_content );
 			return $my_content;
 		endif;
 	}
@@ -169,10 +178,13 @@ final class Parser {
 	 * @return string html rendered from the markdown
 	 */
 	public function markdown2html( $content ) {
+
 		if ( ! isset( $this->parser ) || empty( $this->parser ) ) :
 			$this->custom_parser();
 		endif;
-		$safe = preg_replace( '#((<\/\w+>)(<\w+))#', "$2\n$3", isset( $content ) ? $content : '' );
+		$content = isset( $content ) ? $content : '';
+		$safe = preg_replace( '#((<\/\w+>)(<\w+))#', "$2\n$3", $content );
+		$safe = preg_replace( '#\n([^<]+)(<\w+>)#', "\n$1\n$2", $safe );
 		if ( defined( 'MMD_USE_HEADINGS' ) && ! in_array( '1', MMD_USE_HEADINGS ) && ! defined( 'WP_MMD_O2_PLUG' ) ) :
 			$safe = $this->custom_list_filter( $safe );
 		endif;

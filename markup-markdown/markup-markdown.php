@@ -3,19 +3,20 @@
  * Markup Markdown
  *
  * Plugin Name: Markup Markdown
+ * Plugin URI:  https://www.markup-markdown.com
  * Description: Replaces the Gutenberg Block Editor in favor of pure markdown based markups
- * Version:     3.18.2
+ * Version:     3.19.0
  * Author:      Pierre-Henri Lavigne
  * Author URI:  https://www.markup-markdown.com
- * License:     GPLv2 or later
- * License URI: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+ * License:     GPLv3 or later
+ * License URI: https://www.gnu.org/licenses/gpl-3.0.html#license-text
  * Text Domain: markup-markdown
  * Domain Path: /languages
  * Requires at least: 4.9
  * Tested up to: 6.8.1
  *
  * This program is free software; you can redistribute it and/or modify it under the terms of the GNU
- * General Public License version 2, as published by the Free Software Foundation. You may NOT assume
+ * General Public License version 3, as published by the Free Software Foundation. You may NOT assume
  * that you can use any other version of the GPL.
  *
  * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without
@@ -32,7 +33,7 @@ if ( ! class_exists( 'Markup_Markdown' ) ) :
 		protected $parser;
 
 		protected $settings = array(
-			'version' => '3.18.2',
+			'version' => '3.19.0',
 			'plugin_uri' => '',
 			'plugin_dir' => '',
 			'plugin_slug' => '',
@@ -42,6 +43,8 @@ if ( ! class_exists( 'Markup_Markdown' ) ) :
 			'default_conf' => array()
 		);
 
+		protected $filesystem_ready = 0;
+		protected $filesystem;
 
 		public function __construct() {
 			$this->settings[ 'plugin_slug' ] = plugin_basename( __DIR__ );
@@ -164,7 +167,7 @@ if ( ! class_exists( 'Markup_Markdown' ) ) :
 			if ( ! isset( $file ) || empty( $file ) ) :
 				return false;
 			endif;
-			$my_data = file_get_contents( $file );
+			$my_data = $this->filesystem->get_contents( $file );
 			if ( ! isset( $my_data ) || empty( $my_data ) ) :
 				return false;
 			endif;
@@ -175,10 +178,137 @@ if ( ! class_exists( 'Markup_Markdown' ) ) :
 		}
 
 
+		/**
+		 * @since 3.19
+		 * @access private
+		 *
+		 * @return Boolean TRUE if $wp_filesystem can be used or false
+		 */
+		private function check_filesystem() {
+			if ( ! $this->filesystem_ready ) :
+				if ( ! function_exists( 'wp_filesystem' ) ) :
+					require_once ABSPATH . 'wp-admin/includes/file.php';
+				endif;
+				$this->filesystem_ready = WP_Filesystem() ? 1 : -1;
+				if ( $this->filesystem_ready > 0 ) :
+					global $wp_filesystem;
+					$this->filesystem = clone $wp_filesystem;
+				else:
+					$this->file_system_ready = -1; # Silent failed
+				endif;
+			endif;
+			return $this->filesystem_ready > 0 ? TRUE : FALSE;
+		}
+
+
+		/**
+		 * @since 3.19
+		 * @access public
+		 *
+		 * @param String $item Target file or directory
+		 *
+		 * @return Boolean TRUE in case of success, FALSE otherwise
+		 */
+		final public function exists( $item ) {
+			if ( ! $this->check_filesystem() || ! isset( $item ) || empty( $item ) ) :
+				return FALSE;
+			endif;
+			return $this->filesystem->exists( $item );
+		}
+
+
+		/**
+		 * @since 3.19
+		 * @access private
+		 *
+		 * @param String $file Name of the file to read.
+		 *
+		 * @return String|FALSE Content of the file as a string on succes, FALSE otherwise
+		 */
+		final public function get_contents( $file ) {
+			if ( ! $this->check_filesystem() || ! isset( $file ) || empty( $file ) ) :
+				return FALSE;
+			endif;
+			return $this->filesystem->get_contents( $file );
+		}
+
+
+		/**
+		 * @since 3.19
+		 * @access public
+		 *
+		 * @param String $dir Target directory path
+		 *
+		 * @return Boolean TRUE in case of success, FALSE otherwise
+		 */
+		final public function mkdir( $dir ) {
+			if ( ! $this->check_filesystem() || ! isset( $dir ) || empty( $dir ) ) :
+				return FALSE;
+			endif;
+			return $this->filesystem->mkdir( $dir, 0664 );
+		}
+
+
+		/**
+		 * @since 3.19
+		 * @access public
+		 *
+		 * @param String $file Target file
+		 *
+		 * @return Boolean TRUE in case of success, FALSE otherwise
+		 */
+		final public function move( $src, $dest ) {
+			if ( ! $this->check_filesystem() ) :
+				return FALSE;
+			endif;
+			if ( ! isset( $src ) || empty( $src ) || ! isset( $dest )|| empty( $desc ) ) :
+				return FALSE;
+			endif;
+			return $this->filesystem->move( $src, $dest, TRUE );
+		}
+
+		/**
+		 * @since 3.19
+		 * @access public
+		 *
+		 * @param String $file Target file
+		 * @param String $contents Data to write to the target file
+		 *
+		 * @return Boolean TRUE in case of success, FALSE otherwise
+		 */
+		final public function put_contents( $file, $contents ) {
+			if ( ! $this->check_filesystem() ) :
+				return FALSE;
+			endif;
+			if ( ! isset( $file ) || empty( $file ) || ! isset( $contents ) || empty( $contents ) ) :
+				return FALSE;
+			endif;
+			return $this->filesystem->put_contents( $file, $contents, 0664 );
+		}
+
+
+		/**
+		 * @since 3.19
+		 * @access public
+		 *
+		 * @param String $file Target file
+		 *
+		 * @return Boolean TRUE in case of success, FALSE otherwise
+		 */
+		final public function touch( $file ) {
+			if ( ! $this->check_filesystem() ) :
+				return FALSE;
+			endif;
+			if ( ! isset( $file ) || empty( $file ) ) :
+				return FALSE;
+			endif;
+			return $this->filesystem->touch( $file );
+		}
+
 	}
 
 
-	// Allow developers to access our properties and methods of the instance
+	// Allow developers to access public properties and methods of the instance
 	final class Markup_Markdown_Instance {
 
 		private static $instance;
