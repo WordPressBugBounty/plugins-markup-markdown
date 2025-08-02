@@ -45,13 +45,12 @@ final class Parser {
 	 */
 	private function static_html( $content ) {
 		if ( empty( $this->post_cache_dir ) ) :
-			$this->post_cache_dir = mmd()->cache_dir . '/.posts/';
+			$this->post_cache_dir = mmd()->cache_dir . '/.posts';
 			if ( ! mmd()->exists( $this->post_cache_dir ) ) :
 				mmd()->mkdir( $this->post_cache_dir );
 			endif;
-			$this->post_cache_dir .= mmd()->curr_blog;
 		endif;
-		$cache_content = $this->post_cache_dir . '_' . get_the_id() . '.html';
+		$cache_content = mmd()->cache_blog_prefix . get_the_id() . '.html';
 		if ( $this->preview !== 'true' && mmd()->exists( $cache_content ) ) :
 			# Cache file already exists
 			$my_content = mmd()->get_contents( $cache_content );

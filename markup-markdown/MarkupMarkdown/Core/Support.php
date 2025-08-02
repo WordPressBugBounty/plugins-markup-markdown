@@ -283,8 +283,8 @@ final class Support {
 
 	public function clear_post_cache( $post_ID, $post, $update ) {
 		# If a modification was made, we must clear the cache to refresh it
-		$cache_content = WP_CONTENT_DIR . '/mmd-cache/.' . get_current_network_id() . '_' . get_current_blog_id() . '_' . $post_ID . '.html';
-		if ( mmd()->exists( $cache_content ) ) :
+		$cache_content = mmd()->cache_blog_prefix . $post_ID . '.html';
+		if ( mmd()->exists( $cache_content ) && function_exists( 'wp_delete_file' ) ) :
 			wp_delete_file( $cache_content );
 		endif;
 		mmd()->clear_cache( $cache_content );

@@ -5,7 +5,7 @@
  * Plugin Name: Markup Markdown
  * Plugin URI:  https://www.markup-markdown.com
  * Description: Replaces the Gutenberg Block Editor in favor of pure markdown based markups
- * Version:     3.20.0
+ * Version:     3.20.1
  * Author:      Pierre-Henri Lavigne
  * Author URI:  https://www.markup-markdown.com
  * License:     GPLv3 or later
@@ -33,7 +33,7 @@ if ( ! class_exists( 'Markup_Markdown' ) ) :
 		protected $parser;
 
 		protected $settings = array(
-			'version' => '3.20.0',
+			'version' => '3.20.1',
 			'plugin_uri' => '',
 			'plugin_dir' => '',
 			'plugin_slug' => '',
@@ -52,7 +52,7 @@ if ( ! class_exists( 'Markup_Markdown' ) ) :
 			$this->settings[ 'plugin_dir' ] = plugin_dir_path( __FILE__ );
 			$this->settings[ 'cache_dir' ] = WP_CONTENT_DIR . '/mmd-cache';
 			$this->settings[ 'conf_dir' ] = WP_CONTENT_DIR . '/mmd-conf';
-			$this->settings[ 'cache_blog_prefix' ] = WP_CONTENT_DIR . '/mmd-cache/' . get_current_network_id() . '_' . get_current_blog_id() . '_';
+			$this->settings[ 'cache_blog_prefix' ] = WP_CONTENT_DIR . '/mmd-cache/.posts/' . get_current_network_id() . '_' . get_current_blog_id() . '_';
 			$this->settings[ 'conf_blog_prefix' ] = WP_CONTENT_DIR . '/mmd-conf/' . get_current_network_id() . '_' . get_current_blog_id() . '_';
 			require_once $this->settings[ 'plugin_dir' ] . '/MarkupMarkdown/Core/Activation.php';
 		}
@@ -86,7 +86,7 @@ if ( ! class_exists( 'Markup_Markdown' ) ) :
 			if ( isset( $this->settings[ $name ] ) && is_array( $this->settings[ $name ] ) && is_array( $val ) ) :
 				$this->settings[ $name ] = array_merge( $this->settings[ $name ], $val );
 			else :
-				$fixed = array( 'plugin_uri', 'plugin_dir', 'plugin_slug', 'cache_dir', 'conf_dir', 'curr_blog', 'default_conf' );
+				$fixed = array( 'plugin_uri', 'plugin_dir', 'plugin_slug', 'cache_dir', 'conf_dir', 'curr_blog', 'default_conf', 'cache_blog_prefix', 'conf_blog_prefix' );
 				if ( ! in_array( $name, $fixed ) ) :
 					$this->settings[ $name ] = $val;
 				endif;
