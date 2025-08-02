@@ -86,6 +86,7 @@ final class Layout {
 			endforeach;
 		endif;
 		$my_cnf[ 'keep_spaces' ] = filter_input( INPUT_POST, 'mmd_keepspaces', FILTER_VALIDATE_INT );
+		$my_cnf[ 'super_backslash' ] = filter_input( INPUT_POST, 'mmd_superbackslash', FILTER_VALIDATE_INT );
 		return $my_cnf;
 	}
 	public function create_const( $my_cnf ) {
@@ -105,6 +106,8 @@ final class Layout {
 		endif;
 		$my_cnf[ 'MMD_KEEP_SPACES' ] = isset( $my_cnf[ 'keep_spaces' ] ) ? $my_cnf[ 'keep_spaces' ] : 0;
 		unset( $my_cnf[ 'keep_spaces' ] );
+		$my_cnf[ 'MMD_SUPER_BACKSLASH' ] = isset( $my_cnf[ 'super_backslash' ] ) ? $my_cnf[ 'super_backslash' ] : 0;
+		unset( $my_cnf[ 'super_backslash' ] );
 		return $my_cnf;
 	}
 

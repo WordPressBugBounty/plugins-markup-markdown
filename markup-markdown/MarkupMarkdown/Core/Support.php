@@ -41,6 +41,16 @@ final class Support {
 	);
 
 
+	/**
+	 * @property Integer $show_post_id
+	 * ID of the post being displayed at the screen
+	 *
+	 * @since 3.20.0
+	 * @access public
+	 */
+	public $show_post_id = 0;
+
+
 	public function __construct() {
 		# Add Support. When possible we let developers take benefit of the default 10 priority
 		add_action( 'init', array( $this, 'add_markdown_support' ) );
@@ -62,7 +72,8 @@ final class Support {
 			# With recent block editors / json theme :
 			# - **get_header** hook is sometimes not fired at all
 			# - **wp_head** hook is fired too late to trigger our custom content filters
-			$this->prepare_proxy_filters(); 
+			$this->prepare_proxy_filters();
+			add_action( 'wp', array( $this, 'prepare_post_parser_filters' ), 9 );
 			add_action( 'mmd_addons_loaded', array( $this, 'add_extra_proxy_filters' ) );
 			# Then check if the request is related to a front page / post.
 			# We need the latest hook wp_head to keep compatibility with plugin like ACF
@@ -465,6 +476,23 @@ final class Support {
 	/**
 	 * Prepare in advanced content related filters
 	 *
+	 * @since 3.20.0
+	 * @access public
+	 *
+	 * @return String the content with the backslash used as escaped character for HTML tags and shortcodes	
+	 */
+	public function filter_backslash( $content ) {
+		$content = str_replace( array( '\&lt;', '\<' ), '&lt;', $content );
+		$content = str_replace( array( '\&gt;', '\>' ), '&gt;', $content );
+		$content = str_replace( array( '\&lsqb;', '\[' ), '&lsqb;', $content );
+		$content = str_replace( array( '\&rsqb;', '\]', ), '&rsqb;', $content );
+		return $content;
+	}
+
+
+	/**
+	 * Prepare in advanced content related filters
+	 *
 	 * @since 3.6.4
 	 * @access public
 	 *
@@ -475,8 +503,29 @@ final class Support {
 		add_filter( 'the_excerpt', array( $this, 'post_excerpt_mmd2html' ), 9, 1 );
 		add_filter( 'category_description', array( $this, 'description_field_mmd2html' ), 9, 1 );
 		add_filter( 'term_description', array( $this, 'description_field_mmd2html' ), 9, 1 );
-		add_filter( 'mmd_proxy_filters', array( $this, 'push_proxy_filters' ), 9, 1);
+		add_filter( 'mmd_proxy_filters', array( $this, 'push_proxy_filters' ), 9, 1 );
 		add_filter( 'render_block', array( $this, 'filter_render_block' ), 9, 3 );
+	}
+
+
+	/**
+	 * Additional filters to handle special characters
+	 *
+	 * @since 3.20.0
+	 * @access public
+	 *
+	 * @return Void
+	 */
+	public function prepare_post_parser_filters() {
+		if ( is_singular() ) :
+			$this->show_post_id = (int)get_the_ID();
+		endif;
+		if ( $this->show_post_id > 0 && defined( 'MMD_SUPER_BACKSLASH' ) && MMD_SUPER_BACKSLASH ) :
+			add_filter( 'the_content', array( $this, 'filter_backslash' ), 100, 1 );
+			add_filter( 'the_excerpt', array( $this, 'filter_backslash' ), 100, 1 );
+			add_filter( 'category_description', array( $this, 'filter_backslash' ), 100, 1 );
+			add_filter( 'term_description', array( $this, 'filter_backslash' ), 100, 1 );
+		endif;
 	}
 
 
@@ -496,6 +545,9 @@ final class Support {
 			return $block_content;
 		elseif ( strpos( $block[ 'blockName' ], 'content' ) !== false || strpos( $block[ 'blockName' ], 'excerpt' ) !== false ) :
 			if ( ! isset( $instance->context ) || ! isset( $instance->context[ 'postId' ] ) || ! function_exists( 'get_post_type' ) ) :
+				return $block_content;
+			endif;
+			if ( isset( $this->show_post_id ) && $this->show_post_id > 0 && (int)$this->show_post_id === (int)$instance->context[ 'postId' ] ) :
 				return $block_content;
 			endif;
 			$my_post_type = get_post_type( $instance->context[ 'postId' ] );

@@ -178,23 +178,35 @@ final class Parser {
 	 * @return string html rendered from the markdown
 	 */
 	public function markdown2html( $content ) {
-
 		if ( ! isset( $this->parser ) || empty( $this->parser ) ) :
 			$this->custom_parser();
 		endif;
 		$content = isset( $content ) ? $content : '';
 		$safe = preg_replace( '#((<\/\w+>)(<\w+))#', "$2\n$3", $content );
 		$safe = preg_replace( '#\n([^<]+)(<\w+>)#', "\n$1\n$2", $safe );
+		if ( defined( 'MMD_SUPER_BACKSLASH' ) && MMD_SUPER_BACKSLASH ) :
+			$safe = preg_replace( '#\\\\<#', "{-BACKSLASHLT-}", $safe );
+			$safe = preg_replace( '#\\\\>#', "{-BACKSLASHGT-}", $safe );
+			$safe = preg_replace( '#\\\\\[#', "{-BACKSLASHOB-}", $safe );
+			$safe = preg_replace( '#\\\\\]#', "{-BACKSLASHCB-}", $safe );
+		endif;
 		if ( defined( 'MMD_USE_HEADINGS' ) && ! in_array( '1', MMD_USE_HEADINGS ) && ! defined( 'WP_MMD_O2_PLUG' ) ) :
 			$safe = $this->custom_list_filter( $safe );
 		endif;
 		if ( defined( 'MMD_KEEP_SPACES' ) && MMD_KEEP_SPACES > 0 ) : # Since 3.7.1
-			$safe_spaces = preg_replace( '#\n\s#m', "\n{-SPACE-}", $safe );
-			$markdown = $this->parser->text( $safe_spaces );
-			return preg_replace( '#\{-SPACE-\}#', " ", $markdown );
-		else :
-			return $this->parser->text( $safe );
+			$safe = preg_replace( '#\n\s#m', "\n{-SPACE-}", $safe );
 		endif;
+		$markdown = $this->parser->text( $safe );
+		if ( defined( 'MMD_SUPER_BACKSLASH' ) && MMD_SUPER_BACKSLASH ) :
+			$markdown = str_replace( '{-BACKSLASHLT-}', '\&lt;', $markdown );
+			$markdown = str_replace( '{-BACKSLASHGT-}', '\&gt;', $markdown );
+			$markdown = str_replace( '{-BACKSLASHOB-}', '\&lsqb;', $markdown );
+			$markdown = str_replace( '{-BACKSLASHCB-}', '\&rsqb;', $markdown );
+		endif;
+		if ( defined( 'MMD_KEEP_SPACES' ) && MMD_KEEP_SPACES > 0 ) :
+			$markdown = preg_replace( '#\{-SPACE-\}#', " ", $markdown );
+		endif;
+		return $markdown;
 	}
 
 }
