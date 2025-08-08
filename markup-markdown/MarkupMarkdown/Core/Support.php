@@ -369,7 +369,7 @@ final class Support {
 			# @since 3.6.4
 			return $field_content;
 		endif;
-		if ( wp_is_rest_endpoint() || ( is_singular() && is_main_query() ) || ( ( is_home() || is_front_page() || is_singular() || is_archive() ) && in_the_loop() ) ) :
+		if ( wp_is_rest_endpoint() || ( is_singular() && is_main_query() ) || ( ( is_home() || is_front_page() || is_singular() || is_archive() || is_search() ) && in_the_loop() ) ) :
 			if ( post_type_supports( get_post_type(), 'markup-markdown' ) || post_type_supports( get_post_type(), 'markup_markdown' ) ) :
 				# Filters removed since 3.8.0
 				remove_filter( 'the_content', 'wpautop' );
@@ -520,7 +520,7 @@ final class Support {
 		if ( is_singular() ) :
 			$this->show_post_id = (int)get_the_ID();
 		endif;
-		if ( $this->show_post_id > 0 && defined( 'MMD_SUPER_BACKSLASH' ) && MMD_SUPER_BACKSLASH ) :
+		if ( defined( 'MMD_SUPER_BACKSLASH' ) && MMD_SUPER_BACKSLASH ) :
 			add_filter( 'the_content', array( $this, 'filter_backslash' ), 100, 1 );
 			add_filter( 'the_excerpt', array( $this, 'filter_backslash' ), 100, 1 );
 			add_filter( 'category_description', array( $this, 'filter_backslash' ), 100, 1 );
@@ -543,32 +543,41 @@ final class Support {
 	public function filter_render_block( $block_content, $block, $instance ) {
 		if ( ! isset( $block ) || ! isset( $block[ 'blockName' ] ) ) :
 			return $block_content;
-		elseif ( strpos( $block[ 'blockName' ], 'content' ) !== false || strpos( $block[ 'blockName' ], 'excerpt' ) !== false ) :
-			if ( ! isset( $instance->context ) || ! isset( $instance->context[ 'postId' ] ) || ! function_exists( 'get_post_type' ) ) :
-				return $block_content;
-			endif;
-			if ( isset( $this->show_post_id ) && $this->show_post_id > 0 && (int)$this->show_post_id === (int)$instance->context[ 'postId' ] ) :
-				return $block_content;
-			endif;
-			$my_post_type = get_post_type( $instance->context[ 'postId' ] );
-			if ( ! $this->post_type_support_markdown( $my_post_type ) ) :
-				return $block_content;
-			endif;
-			$my_block_content = array();
-			preg_match_all( '#^<div([^>]+)>(.*?)</div>$#s', $block_content, $my_block_content );
-			if ( ! isset( $my_block_content ) || ! is_array( $my_block_content ) || ! isset( $my_block_content[ 0 ] ) || count( $my_block_content[ 0 ] ) !== 1 ) :
-				return $block_content;
-			endif;
-			# Reverse autop if enabled
-			$new_content = preg_replace( '#<pre#', '<tmppre', html_entity_decode( $my_block_content[ 2 ][ 0 ] ) );
-			$new_content = preg_replace( '#</p>[\n]*<p[^>]*>#', "\n\n", $new_content );
-			$new_content = preg_replace( '#</p>|<p[\s]*[^>]*>#', "\n", $new_content );
-			$new_content = preg_replace( '#<br[\s/]*>#', '', $new_content );
-			$new_content = preg_replace( '#\n– #', "\n- ", $new_content );
-			$new_content = preg_replace( '#<tmppre#', '<pre', $new_content );
-			return '<div' . $my_block_content[ 1 ][ 0 ] . '>' . mmd()->markdown2html( $new_content ) . '</div>';
+		elseif ( strpos( $block[ 'blockName' ], 'content' ) === false && strpos( $block[ 'blockName' ], 'excerpt' ) === false ) :
+			return $block_content;
+		elseif ( ! isset( $instance->context ) || ! isset( $instance->context[ 'postId' ] ) || ! function_exists( 'get_post_type' ) ) :
+			return $block_content;
 		endif;
-		return $block_content;
+		$my_post_type = get_post_type( $instance->context[ 'postId' ] );
+		if ( ! $this->post_type_support_markdown( $my_post_type ) ) :
+			return $block_content;
+		endif;
+		$my_post_ID = (int)$instance->context[ 'postId' ];
+		if ( isset( $this->show_post_id ) && $this->show_post_id > 0 && $this->show_post_id === $my_post_ID ) :
+			return $block_content;
+		endif;
+		$my_block_content = array();
+		preg_match_all( '#^<div([^>]+)>(.*?)</div>$#s', $block_content, $my_block_content );
+		if ( ! isset( $my_block_content ) || ! is_array( $my_block_content ) || ! isset( $my_block_content[ 0 ] ) || count( $my_block_content[ 0 ] ) !== 1 ) :
+			return $block_content;
+		endif;
+		$my_post = get_post( $my_post_ID );
+		if ( ! isset( $my_post ) || ! $my_post ) :
+			return $block_content;
+		endif;
+		$excerpt = strpos( $block[ 'blockName' ], 'excerpt' ) !== false ? true : false;
+		if ( $excerpt ) :
+			$my_post_content = apply_filters( 'field_markdown2html', isset( $my_post->post_excerpt ) && ! empty( $my_post->post_excerpt ) ? $my_post_excerpt : $my_post_content );
+		else :
+			$my_post_content = apply_filters( 'field_markdown2html', $my_post->post_content );
+		endif;
+		if ( defined( 'MMD_SUPER_BACKSLASH' ) && MMD_SUPER_BACKSLASH ) :
+			$my_post_content = $this->filter_backslash( $my_post_content );
+		endif;
+		if ( $excerpt ) :
+			$my_post_content = apply_filters( 'get_the_excerpt', wp_kses( $my_post_content, array( 'p', array( 'class' => true, 'id' => true ) ) ), $my_post_ID );
+		endif;
+		return '<div' . $my_block_content[ 1 ][ 0 ] . '>' . $my_post_content . '</div>';
 	}
 
 

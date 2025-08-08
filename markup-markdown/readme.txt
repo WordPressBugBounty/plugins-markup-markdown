@@ -1,7 +1,7 @@
 === Markup Markdown ===
 Tags: Editor, Markdown
-Stable Tag: 3.20.2
-Version: 3.20.2
+Stable Tag: 3.20.5
+Version: 3.20.5
 Requires at least: 4.9
 Tested up to: 6.8
 Requires PHP: 5.6.0
@@ -68,6 +68,13 @@ The current version is based on components that are not compatible with assistiv
 
 
 == Changelog ==
+
+= 3.20.5 =
+
+Bug fixes:
+- Patching media metadata null (missing image) with animated webp
+- Adding search template to the markdown filters
+- Updating rendering blocks filters for widgets located in the header / footer /sidebar by themes built for Gutenberg
 
 = 3.20.2 =
 

@@ -198,9 +198,10 @@ abstract class ImageTinyAPI {
 	 * 
 	 * @param Integer $img_id WP Attachment ID
 	 * @param Array $img_attrs Image related attribute
+	 * @param String $img_fallback Original img tag as fallback
 	 * @return String Modified image tag
 	 */
-	protected function wrap_image( $img_id = 0, $img_attrs = [] ) {
+	protected function wrap_image( $img_id = 0, $img_attrs = [], $img_fallback = '' ) {
 		if ( ! isset( $img_id ) || ! (int)$img_id || ! isset( $img_attrs ) || ! is_array( $img_attrs ) ) :
 			return '';
 		endif;
@@ -214,10 +215,14 @@ abstract class ImageTinyAPI {
 			$img_caption = trim( $img_attrs[ 'caption' ] );
 			unset( $img_attrs[ 'caption' ] );
 		endif;
+		$img_html = \wp_get_attachment_image( $img_id, $img_size, false, $img_attrs );
+		if ( ( ! isset( $img_html ) || ! $img_html || empty( $img_html ) ) && ( isset( $img_fallback ) && ! empty( $img_fallback ) ) ) :
+			$img_html = function_exists( 'wp_kses_post' ) ? wp_kses_post( $img_fallback ) : '';
+		endif;
 		return '<figure id="attachment_mmd_' . $img_id . '" '
 			. ( ! empty( $img_caption ) ? 'aria-describedby="caption-attachment-mmd' . $img_id . '" class="wp-block-image wp-caption ' : 'class="wp-block-image ' )
 			. ( isset( $img_attrs[ 'align' ] ) ? 'align' . $img_attrs[ 'align' ] : '' )
-			. '">' . \wp_get_attachment_image( $img_id, $img_size, false, $img_attrs )
+			. '">' . $img_html
 			. ( ! empty( $img_caption ) ? '<figcaption id="caption-attachment-mmd' . $img_id . '" class="wp-caption-text wp-element-caption">' . trim( $img_caption ) . '</figcaption>' : '' )
 			. '</figure>';
 	}
@@ -253,7 +258,7 @@ abstract class ImageTinyAPI {
 		# Check for a height value
 		preg_match( '#height="(.*?)"#', $img_html, $tmp_args );
 		$img_attrs = array_merge( $img_attrs, $this->check_height_attribute( $tmp_args, $img_src ) );
-		$new_img = $this->wrap_image( $img_id, $img_attrs );
+		$new_img = $this->wrap_image( $img_id, $img_attrs, $img_html );
 		return preg_replace( '#<img[^>]+>#', $new_img, $img_html );
 	}
 
