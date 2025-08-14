@@ -11,7 +11,7 @@ class WPGeshi {
 
 
 	public function __construct() {
-		if ( file_exists( WP_PLUGIN_DIR . '/wp-geshi-highlight/wp-geshi-highlight.php' ) ) :
+		if ( mmd()->exists( WP_PLUGIN_DIR . '/wp-geshi-highlight/wp-geshi-highlight.php' ) ) :
 			define( 'MMD_WPGESHI_PLUG', true );
 			add_action( 'after_setup_theme', array( $this, 'mmd_wp_geshi_plug' ) );
 		endif;
@@ -73,28 +73,26 @@ class WPGeshi {
 			wp_add_inline_style( 'wpgeshi-wp-geshi-highlight', $this->mmd_geshi_css_code );
 		else :
 			# OP Cache is enabled and required PHP module exists. We compile the css inside and push it to the static cache file
-			$geshi_stylesheet = '';
-			ob_start();
+			$geshi_ssheet = '';
 			wp_geshi_add_css_to_head();
 			# There is only 1 global stylesheet at the moment but we use the global variable just in case
 			# At least any stylesheet with the 'wpgeshi' stylesheet will be grabbed
+			# For the first run we still need to ouput the content !
 			global $wp_styles;
 			if ( isset( $wp_styles ) && isset( $wp_styles->queue ) ) :
 				foreach( $wp_styles->queue as $handle ) :
 					if ( strpos( $handle, 'wpgeshi' ) !== FALSE ) :
-						$geshi_stylesheet = '<link rel="stylesheet" id="' . $handle . '-css" href="' . $wp_styles->registered[ $handle ]->src . '" media="all" />';
-						echo "\n" . $geshi_stylesheet;
+						$geshi_ssheet = '<' . 'link id="' . $handle . '-css" href="' . $wp_styles->registered[ $handle ]->src . '" rel="stylesheet" media="all"' . '>';
+						echo "\n" . wp_kses( $geshi_ssheet, array( 'link' => array( 'rel' => true, 'id' => true, 'href' => true, 'media' => true ) ) );
 					endif;
 				endforeach;
 			endif;
-			echo '<style id="wpgeshi-wp-geshi-highlight-inline-css" type="text/css">' . $this->mmd_geshi_css_code . '</style>';
-			$post_geshi_css = ob_get_clean();
+			$geshi_isheet = '<style id="wpgeshi-wp-geshi-highlight-inline-css" type="text/css">' . esc_html__( $this->mmd_geshi_css_code ) . '</style>';
+			echo $geshi_isheet;
 			$post_content = mmd()->cache_blog_prefix . get_the_id() . '.html';
-			if ( file_exists( $post_content ) ) :
-				file_put_contents( $post_content, $post_geshi_css, FILE_APPEND );
+			if ( mmd()->exists( $post_content ) ) :
+				mmd()->put_contents( $post_content, mmd()->get_contents( $post_content ) . wp_kses( $geshi_ssheet, array( 'link' => array( 'rel' => true, 'href' => true, 'media' => true ) ) ) . $geshi_isheet );
 			endif;
-			# For the first run we still need to ouput the content !
-			echo $post_geshi_css;
 		endif;
 		return TRUE;
 	}
