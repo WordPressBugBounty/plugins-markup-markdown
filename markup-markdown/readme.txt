@@ -1,7 +1,7 @@
 === Markup Markdown ===
 Tags: Editor, Markdown
-Stable Tag: 3.20.6
-Version: 3.20.6
+Stable Tag: 3.20.7
+Version: 3.20.7
 Requires at least: 4.9
 Tested up to: 6.8
 Requires PHP: 5.6.0
@@ -68,6 +68,13 @@ The current version is based on components that are not compatible with assistiv
 
 
 == Changelog ==
+
+= 3.20.7 =
+
+Bug fixes:
+- Custom classnames used with images aren't overridden anymore and kept within the HTML code
+- WEBP and AVIF media format were added to the gallery filters (Requires "gallery" to be selected as the post format)
+- Gutenberg block filter fixed for excerpts (Requires the "Keep blocks features" checked from the settings page)
 
 = 3.20.6 =
 

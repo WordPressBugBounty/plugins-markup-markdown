@@ -574,16 +574,21 @@ final class Support {
 		if ( ! isset( $my_post ) || ! $my_post ) :
 			return $block_content;
 		endif;
-		if ( $this->show_post_excerpt < 0 ) :
+		if ( ! defined( 'MMD_USE_BLOCKSTYLES' ) && $this->show_post_excerpt < 0 ) :
 			if ( is_front_page() || is_home() ) :
 				$this->show_post_excerpt = (int)get_option( 'rss_use_excerpt' );
 			else :
-				$this->show_post_excerpt = false;
+				$this->show_post_excerpt = 0;
 			endif;
 		endif;
-		$excerpt = strpos( $block[ 'blockName' ], 'excerpt' ) !== false || $this->show_post_excerpt > 0 ? true : false;
+		$excerpt = false;
+		if ( strpos( $block[ 'blockName' ], 'excerpt' ) !== false ) :
+			$excerpt = true;
+		elseif ( $this->show_post_excerpt > 0 ) :
+			$excerpt = true;
+		endif;
 		if ( $excerpt ) :
-			$my_post_content = apply_filters( 'field_markdown2html', isset( $my_post->post_excerpt ) && ! empty( $my_post->post_excerpt ) ? $my_post->post_excerpt :  $my_post->post_content );
+			$my_post_content = apply_filters( 'field_markdown2html', isset( $my_post->post_excerpt ) && ! empty( $my_post->post_excerpt ) ? $my_post->post_excerpt :  get_the_excerpt( $my_post ) );
 		else :
 			$my_post_content = apply_filters( 'field_markdown2html', $my_post->post_content );
 		endif;
@@ -591,7 +596,7 @@ final class Support {
 			$my_post_content = $this->filter_backslash( $my_post_content );
 		endif;
 		if ( $excerpt ) :
-			$my_post_content =  wp_kses( apply_filters( 'get_the_excerpt', $my_post_content ), array( 'br' => array(), 'p' => array( 'class' => array(), 'id' => array() ) ), $my_post_ID );
+			$my_post_content =  wp_kses( $my_post_content, array( 'br' => array(), 'p' => array( 'class' => array(), 'id' => array() ) ) );
 		endif;
 		return '<div' . $my_block_content[ 1 ][ 0 ] . '>' . $my_post_content . '</div>';
 	}

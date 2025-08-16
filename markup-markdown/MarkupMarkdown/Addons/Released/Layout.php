@@ -259,7 +259,7 @@ final class Layout {
 		wp_enqueue_script( 'masonry' );
 		wp_enqueue_script( 'jquery-masonry' );
 		if ( $lightbox_used > 0 ) :
-			wp_add_inline_style(  'lightbox', '.lightbox-set { margin: 0 -8px } .grid-sizer, .grid-item { margin: 0 8px 16px 8px; width: calc(50% - 16px) } .grid-item a, .grid-item a img { display: block }' );
+			wp_add_inline_style( 'lightbox', '.lightbox-set { margin: 0 -8px } .grid-sizer, .grid-item { margin: 0 8px 16px 8px; width: calc(50% - 16px) } .grid-item a, .grid-item a img { display: block }' );
 		endif;
 		wp_add_inline_script( 'masonry', 'jQuery( document ).ready(function() { jQuery( \'.grid\' ).each(function() { var $grid = jQuery( this ); $grid.imagesLoaded().progress(function() { $grid.masonry( \'layout\' ); }); }); });' );
 		return TRUE;
@@ -298,18 +298,19 @@ final class Layout {
 	 * @return Void
 	 */
 	public function render_lightbox_masonry( $content = '' ) {
+		$allowed_medias = "jpg|JPG|jpeg|JPEG|gif|GIF|png|PNG|apng|APNG|webp|WEBP|tiff|TIFF|avif|AVIF";
 		$replacers = array(
 			# Adjust lightbox for image sets with masonry
 			# Old versions with no *figure* and *figcaption* tags
-			[ "#<li><a href=\"(/wp-content/.*?\.(jpg|jpeg|gif|png))\" title=\"(myset[0-9_]+)\s(.*?)</li>#u", "<div class=\"grid-item\"><a data-lightbox=\"$3\" href=\"$1\" title=\"$4</div>" ],
+			[ "#<li><a href=\"(/wp-content/.*?\.(" . $allowed_medias . "))\" title=\"(myset[0-9_]+)\s(.*?)</li>#u", "<div class=\"grid-item\"><a data-lightbox=\"$3\" href=\"$1\" title=\"$4</div>" ],
 			[ "#<ul>\n<div class=\"grid-item\"><a data-lightbox=\"(.*?)\" href=\"(.*?)\"#u", "<div id=\"$1\" class=\"grid lightbox-set\" data-masonry='{ \"itemSelector\": \".grid-item\", \"columnWidth\": \".grid-sizer\", \"percentPosition\": true }'>\n<div class=\"grid-sizer\"></div>\n<div class=\"grid-item\"><a data-lightbox=\"$1\" href=\"$2\"" ],
 			# New version with *figure* and *figcaption*
-			[ "#<li><figure([^>]+)><a href=\"(/wp-content/.*?\.(jpg|jpeg|gif|png))\" title=\"(myset[0-9_]+)\s(.*?)</li>#u", "<div class=\"grid-item\"><figure$1><a data-lightbox=\"$4\" href=\"$2\" title=\"$5</div>" ],
+			[ "#<li><figure([^>]+)><a href=\"(/wp-content/.*?\.(" . $allowed_medias . "))\" title=\"(myset[0-9_]+)\s(.*?)</li>#u", "<div class=\"grid-item\"><figure$1><a data-lightbox=\"$4\" href=\"$2\" title=\"$5</div>" ],
 			[ "#<ul>\n<div class=\"grid-item\"><figure id\=\"(.*?)\"([^>]+)><a data-lightbox=\"(.*?)\" href=\"(.*?)\"#u", "<div id=\"$1\" class=\"grid lightbox-set\" data-masonry='{ \"itemSelector\": \".grid-item\", \"columnWidth\": \".grid-sizer\", \"percentPosition\": true }'>\n<div class=\"grid-sizer\"></div>\n<div class=\"grid-item\"><figure id=\"$1\"$2><a data-lightbox=\"$3\" href=\"$4\"" ],
 			# Safety clean
 			[ "#</div>\n</ul>#u", "</div>\n</div>" ],
 			# Adjust lightbox for single images
-			[ "#<a href=\"(/wp-content/.*?\.(jpg|jpeg|gif|png))\"#u", "<a href=\"$1\" data-lightbox=\"mygallery\"" ],
+			[ "#<a href=\"(/wp-content/.*?\.(" . $allowed_medias . "))\"#u", "<a href=\"$1\" data-lightbox=\"mygallery\"" ],
 		);
 		foreach( $replacers as $regexp ) :
 			$content = preg_replace( $regexp[ 0 ], $regexp[ 1 ], $content );
