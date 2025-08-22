@@ -1,7 +1,7 @@
 === Markup Markdown ===
 Tags: Editor, Markdown
-Stable Tag: 3.20.8
-Version: 3.20.8
+Stable Tag: 3.20.9
+Version: 3.20.9
 Requires at least: 4.9
 Tested up to: 6.8
 Requires PHP: 5.6.0
@@ -69,13 +69,18 @@ The current version is based on components that are not compatible with assistiv
 
 == Changelog ==
 
+= 3.20.9 =
+
+Bug fix:
+- Image sets for gallery fixed
+
+All _gallery shortcodes_ `[gallery ...]` with legacy or standard themes should trigger properly the _lightbox_ option if enabled with the proper set number.  
+Any list of images will be converted to a 2 columns layout if the _masonry_ option is enabled AND the post format is set to _gallery_.
+
 = 3.20.8 =
 
 Bug fix:
 - Image media filters patched for themes built for blocks editor
-
-All _gallery shortcodes_ `[gallery ...]` with classic or block editor themes should trigger properly the _lightbox_ option if enabled.  
-Any list of images will be converted to a 2 columns layout if the _masonry_ option is enabled AND the post format is set to _gallery_.
 
 = 3.20.7 =
 

@@ -21,6 +21,17 @@ final class Layout {
 	private $toolbar_conf = '';
 
 
+	/**
+	 * Post ID to use for the lightbox gallery
+	 *
+	 * @since 3.20.9
+	 * @access private
+	 *
+	 * @var Integer
+	 */
+	private $post_ID = 0;
+
+
 	public function __construct() {
 		mmd()->default_conf = array( 'MMD_USE_LIGHTBOX' => 1 );
 		mmd()->default_conf = array( 'MMD_USE_IMAGESLOADED' => 1 );
@@ -181,13 +192,13 @@ final class Layout {
 	 * @access public
 	 *
 	 * @param Array $attributes The current link
-	 * @param Integer $post_ID The post ID
+	 * @param Integer $attach_ID The post ID (Attchment ID)
 	 *
 	 * @return Array The updated link attributes
 	 */
-	final public function attachment_link_attributes_filter( $attributes, $post_ID ) {
+	final public function attachment_link_attributes_filter( $attributes, $attach_ID ) {
 		if ( isset( $attributes[ 'href' ] ) && strpos( $attributes[ 'href' ], 'attachment' ) === FALSE ) :
-			$attributes[ 'data-lightbox' ] = 'gallery' . $post_ID . '-' . $this->gal;
+			$attributes[ 'data-lightbox' ] = 'gallery' . $this->post_ID . '-' . $this->gal;
 		endif;
 		return $attributes;
 	}
@@ -317,6 +328,9 @@ final class Layout {
 		foreach( $replacers as $regexp ) :
 			$content = preg_replace( $regexp[ 0 ], $regexp[ 1 ], $content );
 		endforeach;
+		if ( is_singular() && ! $this->post_ID ) :
+			$this->post_ID = get_the_ID();
+		endif;
 		return $content;
 	}
 
