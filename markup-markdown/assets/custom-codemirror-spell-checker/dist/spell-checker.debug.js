@@ -382,9 +382,9 @@ var Typo;
             if (affData && wordsData) {
                 setup();
             }
-            // Loading data for Chrome extentions.
-            else if (typeof window !== 'undefined' && (window.chrome || window.browser)) {
-                var runtime = window.chrome && window.chrome.runtime ? window.chrome.runtime : browser.runtime;
+            // Loading data for browser extentions.
+            else if (typeof window !== 'undefined' && ((window.chrome && window.chrome.runtime) || (window.browser && window.browser.runtime))) {
+                var runtime = window.chrome && window.chrome.runtime ? window.chrome.runtime : window.browser.runtime;
                 if (settings.dictionaryPath) {
                     path = settings.dictionaryPath;
                 }
@@ -686,7 +686,18 @@ var Typo;
                     // Ignore empty lines.
                     continue;
                 }
-                var parts = line.split("/", 2);
+                // The line format is one of:
+                //     word
+                //     word/flags
+                //     word/flags xx:abc yy:def
+                //     word xx:abc yy:def
+                // We don't use the morphological flags (xx:abc, yy:def) and we don't want them included
+                // in the extracted flags.
+                var just_word_and_flags = line.replace(/\s.*$/, '');
+                // just_word_and_flags is definitely one of:
+                //     word
+                //     word/flags
+                var parts = just_word_and_flags.split('/', 2);
                 var word = parts[0];
                 // Now for each affix rule, generate that form of the word.
                 if (parts.length > 1) {
@@ -1100,6 +1111,16 @@ var Typo;
                 var sorted_corrections = [];
                 for (i in weighted_corrections) {
                     if (weighted_corrections.hasOwnProperty(i)) {
+                        if (self.hasFlag(i, "PRIORITYSUGGEST")) {
+                            // We've defined a new affix rule called PRIORITYSUGGEST, indicating that
+                            // if this word is in the suggestions list for a misspelled word, it should
+                            // be given priority over other suggestions.
+                            //
+                            // Add a large number to its weight to push it to the top of the list.
+                            // If multiple priority suggestions are in the list, they'll still be ranked
+                            // against each other, but they'll all be above non-priority suggestions.
+                            weighted_corrections[i] += 1000;
+                        }
                         sorted_corrections.push([i, weighted_corrections[i]]);
                     }
                 }
