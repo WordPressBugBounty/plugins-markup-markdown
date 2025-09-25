@@ -5,7 +5,7 @@
  * Plugin Name: Markup Markdown
  * Plugin URI:  https://www.markup-markdown.com
  * Description: Replaces the Gutenberg Block Editor in favor of pure markdown based markups
- * Version:     3.20.10
+ * Version:     3.20.11
  * Author:      Pierre-Henri Lavigne
  * Author URI:  https://www.markup-markdown.com
  * License:     GPLv3 or later

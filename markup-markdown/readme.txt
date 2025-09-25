@@ -1,7 +1,7 @@
 === Markup Markdown ===
 Tags: Editor, Markdown
-Stable Tag: 3.20.10
-Version: 3.20.10
+Stable Tag: 3.20.11
+Version: 3.20.11
 Requires at least: 4.9
 Tested up to: 6.8
 Requires PHP: 5.6.0
@@ -68,6 +68,11 @@ The current version is based on components that are not compatible with assistiv
 
 
 == Changelog ==
+
+= 3.20.11 =
+
+Maintenance release:
+- Bumping a few dependencies (EasyMDE, Typo.js, Katex) 
 
 = 3.20.10 =
 
