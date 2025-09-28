@@ -1,7 +1,7 @@
 === Markup Markdown ===
 Tags: Editor, Markdown
-Stable Tag: 3.20.11
-Version: 3.20.11
+Stable Tag: 3.20.12
+Version: 3.20.12
 Requires at least: 4.9
 Tested up to: 6.8
 Requires PHP: 5.6.0
@@ -68,6 +68,14 @@ The current version is based on components that are not compatible with assistiv
 
 
 == Changelog ==
+
+= 3.20.12 =
+
+Bug fix:
+- Fixing the filter to render the "Read more" link on the archive template with themes built for Gutenberg
+
+Improvement:
+- Keeping the use of "<!--more-->" or "<!-- more -->" tag with themes built for Gutenberg
 
 = 3.20.11 =
 
