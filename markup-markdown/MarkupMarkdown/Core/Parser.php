@@ -11,15 +11,21 @@ final class Parser {
 
 	private $parser = '';
 
+
 	private $preview = 'false';
+
 
 	private $mmd_allowed = 1;
 
+
 	public $cache_enabled = 0;
+
 
 	public $post_cache_dir = '';
 
+
 	private $allowed_html = array();
+
 
 	public function __construct() {
 		if ( MMD_SUPPORT_ENABLED > 0 ) :
@@ -104,7 +110,7 @@ final class Parser {
 	 * @param string $content the HTML to be parsed
 	 * @return string HTML rendered from the markdown
 	 */
-	public function final_html( $content ) {
+	final public function final_html( $content ) {
 		return apply_filters( 'addon_markdown2html', $this->markdown2html( $content ) );
 	}
 
@@ -120,7 +126,7 @@ final class Parser {
 	 *
 	 * @return String $content The modified HTML content
 	 */
-	public function format_mmd2html( $field_content, $cache_allowed ) {
+	final public function format_mmd2html( $field_content, $cache_allowed ) {
 		if ( ! $this->mmd_allowed ) :
 			# Markdown has been disabled on the main content
 			return $field_content;
@@ -142,17 +148,25 @@ final class Parser {
 	 *
 	 * @return String $content The modified HTML content
 	 */
-	public function html_sanitizer( $field_content ) {
+	final public function html_sanitizer( $field_content ) {
 		if ( ! $this->mmd_allowed ) :
 			# Markdown has been disabled on the main content
 			return $field_content;
-		else:
-			if ( ! isset( $this->allowed_html ) || ! is_array( $this->allowed_html ) || ! count( $this->allowed_html ) ) :
-				$this->allowed_html = wp_kses_allowed_html( 'post' );
-				$this->allowed_html[ 'iframe' ] = array( 'src' => true, 'height' => true, 'width' => true, 'id' => true, 'class' => true, 'title' => true, 'frameborder' => true, 'allow' => true, 'allowfullscreen' => true );
-			endif;
-			return wp_kses( $field_content, $this->allowed_html );
+		elseif ( defined( 'WP_MMD_UNFILTERED_HTML' ) && WP_MMD_UNFILTERED_HTML ) :
+			# Force enabled Unfiltered HTML
+			return $field_content;
 		endif;
+		if ( ! isset( $this->allowed_html ) || ! is_array( $this->allowed_html ) || ! count( $this->allowed_html ) ) :
+			$this->allowed_html = wp_kses_allowed_html( 'post' );
+			$this->allowed_html[ 'iframe' ] = array( 'src' => true, 'height' => true, 'width' => true, 'id' => true, 'class' => true, 'title' => true, 'frameborder' => true, 'allow' => true, 'allowfullscreen' => true );
+			$this->allowed_html[ 'input' ] = array( 'type'  => array(), 'name' => array(), 'value' => array(), 'class' => array(), 'id' => array(), 'placeholder' => array(), 'checked' => array(), 'required' => array(), 'readonly' => array(), 'disabled' => array() );
+		endif;
+		if ( ! isset( $this->allowed_html[ 'form' ] ) && post_password_required() ) :
+			$this->allowed_html[ 'form' ] = array( 'action' => true, 'accept' => true, 'accept-charset' => true, 'enctype' => true, 'method' => true, 'name' => true, 'target' => true );
+		elseif ( isset( $this->allowed_html[ 'form' ] ) ) :
+			unset( $this->allowed_html[ 'form' ] );
+		endif;
+		return wp_kses( $field_content, $this->allowed_html );
 	}
 
 
@@ -190,7 +204,7 @@ final class Parser {
 	 *
 	 * @return String The modified content
 	 */
-	public function custom_list_filter( $content ) {
+	final public function custom_list_filter( $content ) {
 		return preg_replace( '#^([\s]*)[\\\\]*[\#]{1}\s#m', '${1}1. ', $content ); # Trigger ordered list written with the sharp sign
 	}
 
@@ -204,20 +218,22 @@ final class Parser {
 	 * @param string $content the html to be parsed
 	 * @return string html rendered from the markdown
 	 */
-	public function markdown2html( $content ) {
+	final public function markdown2html( $content ) {
 		if ( ! isset( $this->parser ) || empty( $this->parser ) ) :
 			$this->custom_parser();
 		endif;
 		$content = isset( $content ) ? $content : '';
+		# Cleaning / Indenting wrong formatted HTML code
 		$safe = preg_replace( '#((<\/\w+>)(<\w+))#', "$2\n$3", $content );
 		$safe = preg_replace( '#\n([^<]+)(<\w+>)#', "\n$1\n$2", $safe );
+		$safe = preg_replace( '#\n<(strong|b|em|i|u|spana|abbr|b|bdi|bdo|br|button|cite|code|dfn|em|i|img|input|kbd|label|mark|q|s|samp|script|select|small|span|strong|sub|sup|textarea|time|u|var)>#', "<$1>", $safe );
 		if ( defined( 'MMD_SUPER_BACKSLASH' ) && MMD_SUPER_BACKSLASH ) :
 			$safe = preg_replace( '#\\\\<#', "{-BACKSLASHLT-}", $safe );
 			$safe = preg_replace( '#\\\\>#', "{-BACKSLASHGT-}", $safe );
 			$safe = preg_replace( '#\\\\\[#', "{-BACKSLASHOB-}", $safe );
 			$safe = preg_replace( '#\\\\\]#', "{-BACKSLASHCB-}", $safe );
 		endif;
-		if ( defined( 'MMD_USE_HEADINGS' ) && ! in_array( '1', MMD_USE_HEADINGS ) && ! defined( 'WP_MMD_O2_PLUG' ) ) :
+		if ( defined( 'MMD_USE_HEADINGS' ) && ! in_array( '1', MMD_USE_HEADINGS ) && ! defined( 'MMD_O2_PLUG' ) ) :
 			$safe = $this->custom_list_filter( $safe );
 		endif;
 		if ( defined( 'MMD_KEEP_SPACES' ) && MMD_KEEP_SPACES > 0 ) : # Since 3.7.1

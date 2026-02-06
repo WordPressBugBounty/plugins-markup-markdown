@@ -163,14 +163,49 @@ i.mmd_fa-redo:before,
   height: 18px;
 }
 
-i.mmd_fa-times {
+i.mmd_fa-times,
+.editor-toolbar button.mmd_fa-times {
   min-width: 11px;
   height: 11px;
 }
-i.mmd_fa-times:before {
+i.mmd_fa-times:before,
+.editor-toolbar button.mmd_fa-times:before {
   min-width: 11px;
   height: 11px;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 384 512'%3E%3Cpath fill='%23D63638' stroke='%23D63638' stroke-width='1' d='M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z'/%3E%3C/svg%3E");
+}
+
+i.mmd_fa-html-import,
+.editor-toolbar button.mmd_html-import {
+  background-size: auto 18px;
+}
+i.mmd_fa-html-import:before,
+.editor-toolbar button.mmd_html-import:before {
+  min-width: 18px;
+  height: 18px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 640'%3E%3Cpath d='M192 64C156.7 64 128 92.7 128 128L128 368L310.1 368L279.1 337C269.7 327.6 269.7 312.4 279.1 303.1C288.5 293.8 303.7 293.7 313 303.1L385 375.1C394.4 384.5 394.4 399.7 385 409L313 481C303.6 490.4 288.4 490.4 279.1 481C269.8 471.6 269.7 456.4 279.1 447.1L310.1 416.1L128 416.1L128 512.1C128 547.4 156.7 576.1 192 576.1L448 576.1C483.3 576.1 512 547.4 512 512.1L512 234.6C512 217.6 505.3 201.3 493.3 189.3L386.7 82.7C374.7 70.7 358.5 64 341.5 64L192 64zM453.5 240L360 240C346.7 240 336 229.3 336 216L336 122.5L453.5 240z'/%3E%3C/svg%3E");
+}
+
+#wpcontent {
+  padding-left: 0;
+}
+
+#wrap {
+  padding: 0 20px;
+}
+#wrap p.submit {
+  margin: 0 0 0 200px;
+  padding: 0 20px 20px 20px;
+  background: #fff;
+  border-radius: 0;
+}
+@media screen and (max-width: 980px) {
+  #wrap h1 sup {
+    display: none;
+  }
+  #wrap p.submit {
+    margin-left: 0;
+  }
 }
 
 .ui-tabs-nav {
@@ -382,6 +417,7 @@ h4.ui-widget-header + p {
   padding: 5px;
   border: 1px solid #C3C4C7;
   border-radius: 4px;
+  overflow: auto;
 }
 #my_toolbar li {
   display: block;
@@ -441,4 +477,98 @@ h4.ui-widget-header + p {
   overflow: auto;
   background: #fff;
   padding: 1.5em;
+}
+
+.vertical {
+  display: flex;
+  flex-direction: row;
+}
+.vertical .ui-tabs-nav {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 200px;
+  min-width: 200px;
+  border: 0;
+}
+.vertical .ui-tabs-nav:after {
+  background: transparent;
+}
+.vertical .ui-tabs-nav li {
+  border-radius: 0;
+  border-left: 0;
+  border-right: 0;
+}
+.vertical .ui-tabs-nav li:first-child {
+  border-top: 0;
+}
+.vertical .ui-tabs-nav li:last-child {
+  border-bottom: 0;
+}
+.vertical .ui-tabs-nav li.ui-state-active {
+  background: #fff;
+  padding: 0;
+}
+.vertical .ui-tabs-nav li a {
+  padding: 16px;
+}
+.vertical .ui-tabs-nav li, .vertical .ui-tabs-nav a {
+  display: block;
+  margin: 0;
+  float: none;
+}
+.vertical .ui-tabs-panel {
+  overflow: hidden;
+  flex-grow: 1;
+  padding: 0 20px;
+  background: #fff;
+}
+.vertical .ui-tabs-panel.vertical-rows table, .vertical .ui-tabs-panel.vertical-rows thead, .vertical .ui-tabs-panel.vertical-rows tbody, .vertical .ui-tabs-panel.vertical-rows tr, .vertical .ui-tabs-panel.vertical-rows th, .vertical .ui-tabs-panel.vertical-rows td {
+  display: block;
+}
+.vertical .ui-tabs-panel.vertical-rows th {
+  margin: 0;
+  padding: 21px 0 8px 0;
+}
+.vertical .ui-tabs-panel.vertical-rows td {
+  margin: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+@media screen and (max-width: 980px) {
+  .vertical {
+    flex-direction: column;
+  }
+  .vertical .ui-tabs-nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: no-wrap;
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    overflow: auto;
+  }
+  .vertical .ui-tabs-nav li {
+    border-top: 1px solid #c5c5c5;
+  }
+  .vertical .ui-tabs-nav li:first-child {
+    border-top: 1px solid #c5c5c5;
+  }
+  .vertical .ui-tabs-nav li.ui-state-active {
+    border-top-color: rgba(255, 255, 255, 0);
+  }
+  .vertical .ui-tabs-nav li.ui-state-active:first-child {
+    border-top-color: rgba(255, 255, 255, 0);
+  }
+}
+@media screen and (max-width: 980px) and (max-width: 600px) {
+  .vertical .ui-tabs-nav {
+    flex-wrap: wrap;
+    overflow: visible;
+  }
+  .vertical .ui-tabs-nav li {
+    width: 100%;
+    flex-grow: 0;
+  }
 }

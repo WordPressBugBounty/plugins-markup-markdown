@@ -83,7 +83,7 @@ final class Settings {
 	}
 
 
-	public function update_config() {
+	final public function update_config() {
 		# Show the success or error message
 		$options_saved = filter_input( INPUT_GET, 'options_saved', FILTER_VALIDATE_INT );
 		if ( isset( $options_saved ) && ! empty( $options_saved ) ) :
@@ -118,7 +118,7 @@ final class Settings {
 	 *
 	 * @return Void
 	 */
-	public function options_page() {
+	final public function options_page() {
 		if ( ! current_user_can( 'manage_options' ) ) :
 			return '';
 		endif;
@@ -131,7 +131,7 @@ final class Settings {
 				printf( esc_html__( 'Most of the following settings are related to addons. You can globally enable or disable addons from the %1$s screen options %2$s panel.', 'markup-markdown' ), '<a href="#show-settings-link" class="toggler">', '</a>' );
 			?></p>
 			<form method="post">
-				<div id="tabs">
+				<div id="tabs" class="vertical">
 					<ul>
 <?php do_action( 'mmd_tabmenu_options' ); ?>
 					</ul>
@@ -177,13 +177,13 @@ final class Settings {
 	 *
 	 * @return Void
 	 */
-	public function add_admin_menu() {
+	final public function add_admin_menu() {
 		add_options_page( 'Markup Markdown', 'Markup Markdown', 'manage_options', 'markup-markdown-admin', array( $this, 'options_page' ) );
 		$this->setup_options_completed();
 	}
 
 
-	public function mmd_setup_tools() {
+	final public function mmd_setup_tools() {
 		$update = $this->mmd_update_screen_options( filter_input( INPUT_POST, 'screen-options-apply', FILTER_SANITIZE_FULL_SPECIAL_CHARS ) );
 		add_filter( 'screen_options_show_screen', array( $this, 'mmd_screen_options_show_screen' ), 10, 2 );
 		add_filter( 'screen_options_show_submit', array( $this, 'mmd_screen_options_show_submit' ), 10, 2 );
@@ -248,7 +248,7 @@ final class Settings {
 	 * @param \WP_Screen $screen The current screen settings objet.
 	 * @return Boolean TRUE in case the panel should be shown or FALSE.
 	 */
-	public function mmd_screen_options_show_screen( $show_screen, $screen ) {
+	final public function mmd_screen_options_show_screen( $show_screen, $screen ) {
 		if ( is_object( $screen ) && isset( $screen->id ) && $screen->id === 'settings_page_markup-markdown-admin' ) :
 			return TRUE;
 		endif;
@@ -266,7 +266,7 @@ final class Settings {
 	 * @param \WP_Screen $screen The current screen settings objet.
 	 * @return Boolean TRUE in case the panel should be shown or FALSE.
 	 */
-	public function mmd_screen_options_show_submit( $show_submit, $screen ) {
+	final public function mmd_screen_options_show_submit( $show_submit, $screen ) {
 		if ( is_object( $screen ) && isset( $screen->id ) && $screen->id === 'settings_page_markup-markdown-admin' ) :
 			return TRUE;
 		endif;
@@ -284,7 +284,7 @@ final class Settings {
 	 * @param \WP_Screen $screen The current screen settings objet.
 	 * @return String The modified html code for the current panel
 	 */
-	public function mmd_screen_settings( $panel, $screen ) {
+	final public function mmd_screen_settings( $panel, $screen ) {
 		if ( ! is_object( $screen ) || ( isset( $screen->id ) && $screen->id !== 'settings_page_markup-markdown-admin' ) ) :
 			return $panel;
 		endif;
@@ -306,7 +306,7 @@ final class Settings {
 			$html .= '<input class="enable-' . $slug . '-addon" name="mmd_addons[]" id="mmd_addon-' . $slug . '" type="checkbox" value="' . $slug . '"'
 				. ( ( ( ! defined( 'MMD_ADDONS' ) && $addon_inst->active > 0 ) || ( defined( 'MMD_ADDONS' ) && in_array( $slug, MMD_ADDONS ) ) ) ? ' checked="checked"' : '' ) . ' /> ';
 			$html .= $addon_inst->label . ( $addon_inst->release !== 'stable' ? ' <sup>*</sup>' : '' );
-			$html .= '<span class="dashicons dashicons-editor-help dashicons-mmd-helpers" title="' . htmlspecialchars( $addon_inst->desc ) . '"></span>';
+			$html .= '<span class="dashicons dashicons-editor-help dashicons-mmd-helpers" title="' . esc_attr__( $addon_inst->desc ) . '"></span>';
 			$html .= '</label></li>';
 		endforeach;
 		$html .= '</ul>';
@@ -323,14 +323,14 @@ final class Settings {
 	 *
 	 * @return Void
 	 */
-	public function enqueue_setting_scripts() {
+	final public function enqueue_setting_scripts() {
 		$plugin_uri = mmd()->plugin_uri;
-		wp_enqueue_style( 'markup_markdown-options', $plugin_uri . '/assets/markup-markdown/css/plugin_options.min.css', [], '1.0.7' );
+		wp_enqueue_style( 'markup_markdown-options', $plugin_uri . '/assets/markup-markdown/css/plugin_options.min.css', [], '1.0.8' );
 		wp_enqueue_style( 'markup_markdown-easymde_editor',  $plugin_uri . 'assets/easy-markdown-editor/dist/easymde.min.css', [], '2.19.1011' );
 		foreach ( [ 'core', 'tabs', 'draggable', 'droppable', 'sortable', 'button' ] as $jq_component ) :
 			wp_enqueue_script( 'jquery-ui-' . $jq_component );
 		endforeach;
-		wp_enqueue_script( 'markup_markdown-options', $plugin_uri . '/assets/markup-markdown/js/plugin_options.min.js', [ 'jquery-ui-tabs' ], '1.0.7', true );
+		wp_enqueue_script( 'markup_markdown-options', $plugin_uri . '/assets/markup-markdown/js/plugin_options.min.js', [ 'jquery-ui-tabs' ], '1.0.8', true );
 	}
 
 
