@@ -1,9 +1,9 @@
 === Markup Markdown ===
 Tags: Editor, Markdown
-Stable Tag: 3.25.1
-Version: 3.25.1
+Stable Tag: 4.0.0
+Version: 4.0.0
 Requires at least: 6.6
-Tested up to: 6.8
+Tested up to: 7.1
 Requires PHP: 7.2.0
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html#license-text
@@ -46,7 +46,7 @@ Any block editor will be disabled for **all the users** of your Wordpress instan
 Sure, developers & designers can access the public properties & methods of the instance inside their templates through the global _mmd_ function. For example let's say you want to use it with a custom field called 'foo_bar'. You can use something
 like that:
 
-`<?php echo mmd()->markdown2html( get_post_meta( get_the_ID(), 'foo_bar' , true ) ); ?>`
+`<?php echo markup_markdown()->markdown2html( get_post_meta( get_the_ID(), 'foo_bar' , true ) ); ?>`
 
 Disclaimer: with the plugin Advanced Custom Field (ACF), HTML content has been sanitized since v6.2.5.
 If you need to render iframes or others elements, instead of using:
@@ -55,7 +55,7 @@ If you need to render iframes or others elements, instead of using:
 
  use
 
-`<?php echo mmd()->markdown2html( get_field( 'my_custom_field' ) ); ?>`
+`<?php echo markup_markdown()->markdown2html( get_field( 'my_custom_field' ) ); ?>`
 
 = What's the deal with the beta interface? =
 
@@ -69,12 +69,24 @@ The current version is based on components that are not compatible with assistiv
 
 == Changelog ==
 
-=3.25.1=
+= 4.0.0 =
+
+Improvements:
+- Moving further to WordPress Coding Standards
+
+**If you are a developer, the _mmd_ prefix has been deprecated. Please use _markup_markdown_ from now on. A compatibility layer covers _most of_ the gaps, not 100%.**
+
+Bug fix:
+- Geshi highlighting cache with the home / archive templates
+
+Full changelog at https://www.markup-markdown.com/blog/changelog/
+
+= 3.25.1 =
 
 Bug fix:
 - Updating cleaning rules
 
-=3.25.0=
+= 3.25.0 =
 
 Bug fix:
 - Nested lists can be generated with 2 or 4 indent spaces
@@ -106,11 +118,11 @@ Improvements:
 = 3.22.1 =
 
 Bug fix:
-- Patching unselectable radio box on the settings page
+- Patching not selectable radio box on the settings page
 
 = 3.22.0 =
 
-PHP 5 dropped, the minimum requirement is PHP version 7.2 so Wordpress version 6.6 or upper is now required
+PHP 5 dropped, the minimum requirement is PHP version 7.2 so WordPress version 6.6 or upper is now required
 
 Bug fix:
 - Restore form related HTML tags when a post is protected by a password
@@ -141,7 +153,7 @@ Maintenance release:
 
 Bug fixes:
 - Adding `wp_kses` with post_content related filters as well to prevent XSS attacks
-- Updating medias related filters for reponsive movies with themes built for gutenberg
+- Updating medias related filters for responsive movies with themes built for Gutenberg
 
 = 3.20.9 =
 
@@ -167,7 +179,7 @@ Bug fixes:
 
 Bug fixes:
 - Fixing excerpt not working on front page with themes built for blocks
-- Restoring WP Geshi Highight AutoPlug
+- Restoring WP Geshi Highlight AutoPlug
 
 
 = 3.20.5 =
@@ -416,27 +428,6 @@ New feature:
 
 You can now prevent the use of specific headings like H1 in the WYSIWYG for better SEO and friendly theme compatibility
 
-= 3.6.6 =
-
-Bug fix:
-- Removing unwanted spaces (trim) with the headlines
-
-= 3.6.5 =
-
-Quick bug fix:
-- Patch the PHP error with existing instances when the spell checker is enabled and an extra dictionary file is missing
-
-= 3.6.4 =
-
-Bug fix:
-- Adding basic strict mode back with Parsedown
-
-Following the markdown recommendations, #headlines text (without the space after the # sign) are not rendered as headlines anymore.
-
-Improvement:
-- Keeping current hooks but adding a few tweaks earlier in the frontend so markdown can be triggered with themes built for Gutenberg.
-
-*get_header* action won't be fired on the frontend with most of the themes using the blocks editor, *wp_head* will be too late to setup filters as content related data are prepared earlier in the rendering process.
 
 = 3.6.3 =
 
@@ -564,67 +555,10 @@ The first plug with WP Geshi Highlight has been added to allow the rendering of 
 
 Readme.txt Updated
 
-= 3.2.5 =
-
-Improvement:
-- Patch to refresh the editor when the spell checker is disabled
-
-= 3.2.4 =
-
-Bug fix:
-- Patch to refresh the view with frozen loader icons
-
 = 3.2.3 =
 
 Bug fix:
 - Patch for markdown contents not rendered on archive templates and REST calls
-
-= 3.2 =
-
-Bug fix:
-- Bug introduced with version 3 for the custom post type support filter has been fixed
-
-Improvement:
-- "ACF Markup Markdown" custom field with custom post type !
-
-= 3.1.0 =
-
-Improvements:
-- The preview panel has a tiny cache feature to avoid flickering issue when using the side panel view
-- Better support in responsive mode for the sticky toolbar and fullscreen mode
-
-= 3.0.1 =
-
-Hotfix:
-- Namespace Patch for the Extra Parsedown
-
-= 3.0.0 =
-
-Refactored !
-
-New feature:
-- Possible to select and sort the buttons displayed from the toolbars
-
-= 2.6.1 =
-
-Bug fix:
-- Forget to bump assets version number to avoid cache issues when upgrading
-
-= 2.6.0 =
-
-Improvement:
-- Adding option to make the default EasyMDE toolbar sticky
-
-= 2.5.1 =
-
-Bug fixes:
-- PHP: Addons config file not properly created with new installs & upgrades
-- JS: Undefined variables when the spell checker was not activated
-
-= 2.5.0 =
-
-Improvement:
-- Adding option to disable the static html cache
 
 = 2.4.0 =
 
@@ -640,31 +574,6 @@ Bug fixes:
 - Inserting multiples images at once or creating a gallery should work properly
 - Solve an issue to avoid duplicate ids with images when using custom fields
 - Better performance with a unique media wizard per page instead of one media wizard per custom field
-
-= 2.3.0 =
-
-Improvements:
-- New beta interface based on HTML markups for better accessibility
-- A few dependencies are now loaded from the UNPKG CDN (https://unpkg.com/)
-
-Bug fix:
-- The parser has been patched to be compatible with PHP >= 8.X
-
-= 2.2.2 =
-
-Bug fix:
-- Lightboxes working again with the gallery shortcode
-
-= 2.2.1 =
-
-Bug fixes:
-- Adding missing 2 & 3 columns styles for the gallery in the preview rendered by EasyMDE
-- Shortcodes now working in the preview page rendered by Wordpress (The one with /?preview=true in the url)
-
-= 2.2.0 =
-
-Improvement:
-- Enabling "Screen options" on the top right area of the settings page so you can activate or disable addons one by one
 
 = 2.1.2 =
 
@@ -846,11 +755,3 @@ Adding Youtube support. Youtube links will be converted to iframes.
 = 1.0.1 =
 
 Updates to match the Wordpress Plugin Directory requirements
-
-= 1.0.0 =
-
-First version ! ! !  Based on:
-- Javascript easyMDE 2.15.0
-- PHP Parsedown 1.7.4
-
-Developers can access the instance instance through the mmd() global function

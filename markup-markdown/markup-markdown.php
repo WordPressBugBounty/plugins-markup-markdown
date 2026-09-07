@@ -2,10 +2,15 @@
 /**
  * Markup Markdown
  *
+ * @package           MarkupMarkdown
+ * @author            Pierre-Henri Lavigne
+ * @license           GPLv3 or later
+ *
+ * @wordpress-plugin
  * Plugin Name: Markup Markdown
  * Plugin URI:  https://www.markup-markdown.com
  * Description: Replaces the Gutenberg Block Editor in favor of pure markdown based markups
- * Version:     3.25.1
+ * Version:     4.0.0
  * Author:      Pierre-Henri Lavigne
  * Author URI:  https://www.markup-markdown.com
  * License:     GPLv3 or later
@@ -13,7 +18,7 @@
  * Text Domain: markup-markdown
  * Domain Path: /languages
  * Requires at least: 6.6
- * Tested up to: 6.8.3
+ * Tested up to: 7.1
  *
  * This program is free software; you can redistribute it and/or modify it under the terms of the GNU
  * General Public License version 3, as published by the Free Software Foundation. You may NOT assume
@@ -24,37 +29,74 @@
  */
 
 defined( 'ABSPATH' ) || exit;
-define('MMD_FILE_URL', __FILE__);
+define( 'MARKUP_MARKDOWN_FILE_URL', __FILE__ );
+
 
 if ( ! class_exists( 'Markup_Markdown' ) ) :
 
+	/**
+	 * The root core class, everything begins here.
+	 *
+	 * @class Markup_Markdown
+	 */
 	class Markup_Markdown {
 
+
+		/**
+		 * The property that will held the PHP markdown parser
+		 *
+		 * @var object
+		 */
 		protected $parser;
 
+
+		/**
+		 * The basic setup
+		 *
+		 * @var array<string, array>
+		 */
 		protected $settings = array(
-			'version' => '3.25.1',
-			'plugin_uri' => '',
-			'plugin_dir' => '',
-			'plugin_slug' => '',
-			'cache_dir' => '',
-			'conf_dir' => '',
-			'curr_blog' => '1_1',
-			'default_conf' => array()
+			'version'      => '4.0.0',
+			'plugin_uri'   => '', // The http url used to access the plugin assets.
+			'plugin_dir'   => '', // The full path to the plugin directory.
+			'plugin_slug'  => '', // The slug used inside the WordPress plugin directory.
+			'cache_dir'    => '', // The full path to the cache directory.
+			'conf_dir'     => '', // The full path where configuration files are stored.
+			'curr_blog'    => '1_1', // Default active blog configuration.
+			'default_conf' => array(), // Default setup variables.
 		);
 
+
+		/**
+		 * Flag to check if the file system helpers were loaded
+		 *
+		 * @var integer
+		 */
 		protected $filesystem_ready = 0;
+
+
+		/**
+		 * Class to perform various actions with static files
+		 *
+		 * @var object
+		 */
 		protected $filesystem;
 
+
+		/**
+		 * Everything starts here
+		 */
 		public function __construct() {
-			$this->settings[ 'plugin_slug' ] = plugin_basename( __DIR__ );
-			$this->settings[ 'plugin_uri' ] = plugin_dir_url( __FILE__ );
-			$this->settings[ 'plugin_dir' ] = plugin_dir_path( __FILE__ );
-			$this->settings[ 'cache_dir' ] = WP_CONTENT_DIR . '/mmd-cache';
-			$this->settings[ 'conf_dir' ] = WP_CONTENT_DIR . '/mmd-conf';
-			$this->settings[ 'cache_blog_prefix' ] = WP_CONTENT_DIR . '/mmd-cache/.posts/' . get_current_network_id() . '_' . get_current_blog_id() . '_';
-			$this->settings[ 'conf_blog_prefix' ] = WP_CONTENT_DIR . '/mmd-conf/' . get_current_network_id() . '_' . get_current_blog_id() . '_';
-			require_once $this->settings[ 'plugin_dir' ] . '/MarkupMarkdown/Core/Activation.php';
+			$curr_blog                           = get_current_network_id() . '_' . get_current_blog_id();
+			$this->settings['plugin_slug']       = plugin_basename( __DIR__ );
+			$this->settings['plugin_uri']        = plugin_dir_url( __FILE__ );
+			$this->settings['plugin_dir']        = plugin_dir_path( __FILE__ );
+			$this->settings['cache_dir']         = WP_CONTENT_DIR . '/mmd-cache';
+			$this->settings['conf_dir']          = WP_CONTENT_DIR . '/mmd-conf';
+			$this->settings['curr_blog']         = $curr_blog;
+			$this->settings['cache_blog_prefix'] = WP_CONTENT_DIR . '/mmd-cache/.posts/' . $curr_blog . '_';
+			$this->settings['conf_blog_prefix']  = WP_CONTENT_DIR . '/mmd-conf/' . $curr_blog . '_';
+			require_once $this->settings['plugin_dir'] . 'MarkupMarkdown/Core/class-activation.php';
 		}
 
 
@@ -64,8 +106,8 @@ if ( ! class_exists( 'Markup_Markdown' ) ) :
 		 * @since 2.0.0
 		 * @access public
 		 *
-		 * @param String $name The name of the key in the $settings variable to retrieve
-		 * @return Mixed The value of the related key in $settings or an empty string
+		 * @param string $name The name of the key in the $settings variable to retrieve.
+		 * @return mixed The value of the related key in $settings or an empty string.
 		 */
 		public function __get( $name ) {
 			return isset( $this->settings[ $name ] ) ? $this->settings[ $name ] : '';
@@ -78,16 +120,16 @@ if ( ! class_exists( 'Markup_Markdown' ) ) :
 		 * @since 2.0.0
 		 * @access public
 		 *
-		 * @param String $name The name of the key in the $settings variable to overwrite
-		 * @param Mixed $val The new value of the related key in the $settings variable
-		 * @return Void
+		 * @param string $name The name of the key in the $settings variable to overwrite.
+		 * @param mixed  $val The new value of the related key in the $settings variable.
+		 * @return void
 		 */
 		public function __set( $name, $val ) {
 			if ( isset( $this->settings[ $name ] ) && is_array( $this->settings[ $name ] ) && is_array( $val ) ) :
 				$this->settings[ $name ] = array_merge( $this->settings[ $name ], $val );
 			else :
 				$fixed = array( 'plugin_uri', 'plugin_dir', 'plugin_slug', 'cache_dir', 'conf_dir', 'curr_blog', 'default_conf', 'cache_blog_prefix', 'conf_blog_prefix' );
-				if ( ! in_array( $name, $fixed ) ) :
+				if ( false === in_array( $name, $fixed, true ) ) :
 					$this->settings[ $name ] = $val;
 				endif;
 			endif;
@@ -95,27 +137,31 @@ if ( ! class_exists( 'Markup_Markdown' ) ) :
 
 
 		/**
+		 * Global method that will be used to convert markdown string on the fly
+		 *
 		 *  @since 1.0
 		 *  @access public
 		 *
-		 *  @param String $content The markdown code
+		 *  @param string $content The markdown code.
 		 *
-		 *  @return String The HTML content
+		 *  @return string The HTML content
 		 */
 		final public function markdown2html( $content ) {
-			$filtered = apply_filters( 'field_markdown2html', $content );
-			$html = htmlspecialchars_decode( $filtered, ENT_COMPAT );
+			$filtered = apply_filters( 'markup_markdown_field_mmd2html', $content );
+			$html     = htmlspecialchars_decode( $filtered, ENT_COMPAT );
 			return do_shortcode( $html );
 		}
 
 
 		/**
+		 * Global method that can be access to clear OP Cache file
+		 *
 		 *  @since 3.0
 		 *  @access public
 		 *
-		 *  @param $file String Target file
+		 *  @param string $file String Target file.
 		 *
-		 *  @return Void
+		 *  @return void
 		 */
 		final public function clear_cache( $file = '' ) {
 			if ( function_exists( 'wp_opcache_invalidate' ) ) :
@@ -132,21 +178,21 @@ if ( ! class_exists( 'Markup_Markdown' ) ) :
 		 * @since 3.3.0
 		 * @access public
 		 *
-		 * @param Boolean TRUE to grant access user with enough premission
+		 * @param integer $user_id The WordPress user ID to check.
 		 *
-		 * @return Boolean TRUE if granted or FALSE
+		 * @return boolean TRUE if granted or FALSE
 		 */
 		final public function user_allowed( $user_id = 0 ) {
 			if ( ! $user_id ) :
 				$user_id = get_current_user_id();
 			endif;
 			if ( ! $user_id ) :
-				# Disable *Guest* users
+				// Disable *Guest* users.
 				return false;
 			endif;
 			$user = new \WP_User( $user_id );
 			if ( $user && ! $user->has_cap( 'edit_posts' ) ) :
-				# Disable *Subscribers* or users without edit permissions
+				// Disable *Subscribers* or users without edit permissions.
 				return false;
 			endif;
 			return true;
@@ -159,9 +205,10 @@ if ( ! class_exists( 'Markup_Markdown' ) ) :
 		 * @since 3.17.0
 		 * @access public
 		 *
-		 * @param Boolean TRUE to grant access user with enough premission
+		 * @param string  $file Absolute path with file name.
+		 * @param boolean $associative To return the data an associative array, object otherwise.
 		 *
-		 * @return Boolean TRUE if granted or FALSE
+		 * @return array|object The JSON decoded data
 		 */
 		final public function json_decode( $file, $associative ) {
 			if ( ! isset( $file ) || empty( $file ) ) :
@@ -172,17 +219,20 @@ if ( ! class_exists( 'Markup_Markdown' ) ) :
 				return false;
 			endif;
 			if ( substr( $my_data, 0, 3 ) === "\xEF\xBB\xBF" ) :
-		        $my_data = substr( $my_data, 3 );
+				$my_data = substr( $my_data, 3 );
 			endif;
 			return json_decode( $my_data, ! isset( $associative ) ? false : $associative );
 		}
 
 
 		/**
+		 * Initialize an instance of the WordPress file system utility
+		 * that can be used to perform various operations with files
+		 *
 		 * @since 3.19
 		 * @access private
 		 *
-		 * @return Boolean TRUE if $wp_filesystem can be used or false
+		 * @return boolean TRUE if $wp_filesystem can be used or false
 		 */
 		private function check_filesystem() {
 			if ( ! $this->filesystem_ready ) :
@@ -193,143 +243,210 @@ if ( ! class_exists( 'Markup_Markdown' ) ) :
 				if ( $this->filesystem_ready > 0 ) :
 					global $wp_filesystem;
 					$this->filesystem = clone $wp_filesystem;
-				else:
-					$this->file_system_ready = -1; # Silent failed
+				else :
+					$this->file_system_ready = -1; // Silent failed.
 				endif;
 			endif;
-			return $this->filesystem_ready > 0 ? TRUE : FALSE;
+			return $this->filesystem_ready > 0 ? true : false;
 		}
 
 
 		/**
+		 * Helper to check if a file already exists
+		 *
 		 * @since 3.19
 		 * @access public
 		 *
-		 * @param String $item Target file or directory
+		 * @param string $item Target file or directory.
 		 *
-		 * @return Boolean TRUE in case of success, FALSE otherwise
+		 * @return boolean TRUE in case of success, FALSE otherwise
 		 */
 		final public function exists( $item ) {
 			if ( ! $this->check_filesystem() || ! isset( $item ) || empty( $item ) ) :
-				return FALSE;
+				return false;
 			endif;
 			return $this->filesystem->exists( $item );
 		}
 
 
 		/**
+		 * Helper to retrieve the raw content of a file
+		 *
 		 * @since 3.19
 		 * @access private
 		 *
-		 * @param String $file Name of the file to read.
+		 * @param string $file Name of the file to read.
 		 *
-		 * @return String|FALSE Content of the file as a string on succes, FALSE otherwise
+		 * @return string|FALSE Content of the file as a string on success, FALSE otherwise
 		 */
 		final public function get_contents( $file ) {
 			if ( ! $this->check_filesystem() || ! isset( $file ) || empty( $file ) ) :
-				return FALSE;
+				return false;
 			endif;
 			return $this->filesystem->get_contents( $file );
 		}
 
 
 		/**
+		 * Helper to create a folder on the server
+		 *
 		 * @since 3.19
 		 * @access public
 		 *
-		 * @param String $dir Target directory path
+		 * @param string $dir Target directory path.
 		 *
-		 * @return Boolean TRUE in case of success, FALSE otherwise
+		 * @return boolean TRUE in case of success, FALSE otherwise
 		 */
 		final public function mkdir( $dir ) {
 			if ( ! $this->check_filesystem() || ! isset( $dir ) || empty( $dir ) ) :
-				return FALSE;
+				return false;
 			endif;
 			return $this->filesystem->mkdir( $dir, FS_CHMOD_DIR );
 		}
 
 
 		/**
+		 * Helper to move a file / folder
+		 *
 		 * @since 3.19
 		 * @access public
 		 *
-		 * @param String $file Target file
+		 * @param string $src Source of the item.
+		 * @param string $dest Target of the item.
 		 *
-		 * @return Boolean TRUE in case of success, FALSE otherwise
+		 * @return boolean TRUE in case of success, FALSE otherwise
 		 */
 		final public function move( $src, $dest ) {
 			if ( ! $this->check_filesystem() ) :
-				return FALSE;
+				return false;
 			endif;
-			if ( ! isset( $src ) || empty( $src ) || ! isset( $dest )|| empty( $desc ) ) :
-				return FALSE;
+			if ( ! isset( $src ) || empty( $src ) || ! isset( $dest ) || empty( $desc ) ) :
+				return false;
 			endif;
-			return $this->filesystem->move( $src, $dest, TRUE );
+			return $this->filesystem->move( $src, $dest, true );
 		}
 
+
 		/**
+		 * Helper to write data into a file
+		 *
 		 * @since 3.19
 		 * @access public
 		 *
-		 * @param String $file Target file
-		 * @param String $contents Data to write to the target file
+		 * @param string $file Target file.
+		 * @param string $contents Data to write to the target file.
 		 *
-		 * @return Boolean TRUE in case of success, FALSE otherwise
+		 * @return boolean TRUE in case of success, FALSE otherwise
 		 */
 		final public function put_contents( $file, $contents ) {
 			if ( ! $this->check_filesystem() ) :
-				return FALSE;
+				return false;
 			endif;
 			if ( ! isset( $file ) || empty( $file ) || ! isset( $contents ) || empty( $contents ) ) :
-				return FALSE;
+				return false;
 			endif;
-			return $this->filesystem->put_contents( $file, $contents, 0664 );
+			return $this->filesystem->put_contents( $file, $contents );
 		}
 
 
 		/**
+		 * Helper to create a file
+		 *
 		 * @since 3.19
 		 * @access public
 		 *
-		 * @param String $file Target file
+		 * @param string $file Target file.
 		 *
-		 * @return Boolean TRUE in case of success, FALSE otherwise
+		 * @return boolean TRUE in case of success, FALSE otherwise
 		 */
 		final public function touch( $file ) {
 			if ( ! $this->check_filesystem() ) :
-				return FALSE;
+				return false;
 			endif;
 			if ( ! isset( $file ) || empty( $file ) ) :
-				return FALSE;
+				return false;
 			endif;
 			return $this->filesystem->touch( $file );
 		}
 
+
+		/**
+		 * Helper to delete a file
+		 *
+		 * @since 3.26
+		 * @access public
+		 *
+		 * @param string $file Target file.
+		 *
+		 * @return boolean TRUE in case of success, FALSE otherwise
+		 */
+		final public function unlink( $file ) {
+			if ( ! $this->check_filesystem() ) :
+				return false;
+			endif;
+			if ( ! isset( $file ) || empty( $file ) ) :
+				return false;
+			endif;
+			return $this->filesystem->delete( $file, false, false );
+		}
 	}
 
 
-	// Allow developers to access public properties and methods of the instance
+	/**
+	 * Allow developers to access public properties and methods of the instance.
+	 */
 	final class Markup_Markdown_Instance {
 
+		/**
+		 * The handler of the primary instance
+		 *
+		 * @var Object
+		 */
 		private static $instance;
 
+		/**
+		 * Initialize if need be a new instance of Markup Markdown
+		 *
+		 * @return Object The static instance
+		 */
 		public static function instance() {
-			if ( ! isset( self::$instance ) && ! ( self::$instance instanceOf Markup_Markdown_Instance ) ) :
+			if ( ! isset( self::$instance ) && ! ( self::$instance instanceof Markup_Markdown_Instance ) ) :
 				self::$instance = new Markup_Markdown();
+				new \MarkupMarkdown\Core\Activation();
 			endif;
 			return self::$instance;
 		}
-
 	}
 
 
-	if ( ! function_exists( 'mmd' ) ) :
-		function mmd() {
+	if ( ! function_exists( 'markup_markdown' ) ) :
+		/**
+		 * Global available helper
+		 *
+		 * @function markup_markdown
+		 */
+		function markup_markdown() {
 			return Markup_Markdown_Instance::instance();
 		}
-		// Run
-		mmd();
+		// Run !
+		markup_markdown();
+
+		if ( ! function_exists( 'mmd' ) ) :
+			/**
+			 * Previous global available helper
+			 *
+			 * @function mmd
+			 */
+			function mmd() {
+				return markup_markdown();
+			}
+
+		endif;
+
 	endif;
 
+else :
+
+	die( "Don't call Markup Markdown Twice ! ! !" );
 
 endif;
