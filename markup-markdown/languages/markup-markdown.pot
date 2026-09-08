@@ -2,14 +2,14 @@
 # This file is distributed under the GPLv3 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Markup Markdown 3.20.12\n"
+"Project-Id-Version: Markup Markdown 3.25.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/markup-markdown\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-10-13T02:01:56+00:00\n"
+"POT-Creation-Date: 2025-12-03T02:01:52+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: markup-markdown\n"
@@ -35,1660 +35,1704 @@ msgstr ""
 msgid "Pierre-Henri Lavigne"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:54
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:58
 msgid "Code Highlighter"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:56
-#: MarkupMarkdown/Addons/Released/Templates/CodehighlighterForm.php:5
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:60
+#: MarkupMarkdown/Addons/Released/Templates/tmpl-codehighlighterform.php:5
 msgid "Colorful syntax highlighting for your snippets code."
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:111
-#: MarkupMarkdown/Addons/Released/Templates/CodehighlighterForm.php:4
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:115
+#: MarkupMarkdown/Addons/Released/Templates/tmpl-codehighlighterform.php:4
 msgid "Syntax Highlighting"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:218
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:263
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:222
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:267
 msgid "A11Y Dark"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:219
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:223
 msgid "Atom Dark"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:220
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:224
 msgid "Base 16 AtelierSulphurpool Light"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:221
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:225
 msgid "CB"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:222
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:226
 msgid "Coldark Cold"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:223
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:227
 msgid "Coldark Dark"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:224
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:228
 msgid "Coy"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:225
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:229
 msgid "Coy without shadows"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:226
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:230
 msgid "Darcula"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:227
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:457
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:231
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:461
 msgid "Dark"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:228
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:232
 msgid "Dracula"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:229
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:233
 msgid "Duotone Dark"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:230
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:234
 msgid "Duotone Earth"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:231
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:235
 msgid "Duotone Forest"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:232
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:236
 msgid "Duotone Light"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:233
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:237
 msgid "Duotone Sea"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:234
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:238
 msgid "Duotone Space"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:235
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:239
 msgid "Duotone Funky"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:236
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:240
 msgid "GhColors"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:237
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:241
 msgid "Gruvbox Dark"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:238
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:242
 msgid "Gruvbox Light"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:239
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:243
 msgid "Holi Theme"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:240
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:244
 msgid "Hopscotch"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:241
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:245
 msgid "Lucario"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:242
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:246
 msgid "Material Dark"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:243
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:247
 msgid "Material Light"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:244
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:248
 msgid "Material Oceanic"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:245
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:486
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:249
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:490
 msgid "Night Owl"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:246
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:250
 msgid "Okaidia"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:247
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:251
 msgid "One Dark"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:248
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:252
 msgid "One Light"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:249
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:495
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:253
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:499
 msgid "Pojoaque"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:250
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:254
 msgid "Shades of purple"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:251
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:255
 msgid "Solarized Dark Atom"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:252
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:256
 msgid "Solarized Light"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:253
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:257
 msgid "Synthwave84"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:254
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:258
 msgid "Tomorrow"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:255
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:259
 msgid "Twilight"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:256
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:260
 msgid "Visual Studio"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:257
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:261
 msgid "Visual Studio Code Dark+"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:258
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:262
 msgid "Xonokai"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:259
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:263
 msgid "Z-touch"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:262
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:266
 msgid "1C Light"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:264
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:268
 msgid "A11Y Light"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:265
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:269
 msgid "Agate"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:266
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:270
 msgid "An Old-Hope"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:267
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:271
 msgid "Android Studio"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:268
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:272
 msgid "Arduino Light"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:269
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:273
 msgid "Arta"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:270
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:274
 msgid "Ascetic"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:271
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:275
 msgid "Atom One Dark Reasonable"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:272
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:276
 msgid "Atom One Dark"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:273
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:277
 msgid "Atom One Light"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:274
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:278
 msgid "Base16 3024"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:275
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:279
 msgid "Base16 Apathy"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:276
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:280
 msgid "Base16 Apprentice"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:277
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:281
 msgid "Base16 Ashes"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:278
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:282
 msgid "Base16 Atelier Cave Light"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:279
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:283
 msgid "Base16 Atelier Cave"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:280
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:284
 msgid "Base16 Atelier Dune Light"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:281
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:285
 msgid "Base16 Atelier Dune"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:282
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:286
 msgid "Base16 Atelier Estuary Light"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:283
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:287
 msgid "Base16 Atelier Estuary"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:284
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:288
 msgid "Base16 Atelier Forest Light"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:285
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:289
 msgid "Base16 Atelier Forest"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:286
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:290
 msgid "Base16 Atelier Heath Light"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:287
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:291
 msgid "Base16 Atelier Heath"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:288
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:292
 msgid "Base16 Atelier Lakeside Light"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:289
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:293
 msgid "Base16 Atelier Lakeside"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:290
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:294
 msgid "Base16 Atelier Plateau Light"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:291
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:295
 msgid "Base16 Atelier Plateau"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:292
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:296
 msgid "Base16 Atelier Savanna Light"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:293
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:297
 msgid "Base16 Atelier Savanna"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:294
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:298
 msgid "Base16 Atelier Seaside Light"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:295
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:299
 msgid "Base16 Atelier Seaside"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:296
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:300
 msgid "Base16 Atelier Sulphurpool Light"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:297
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:301
 msgid "Base16 Atelier Sulphurpool"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:298
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:302
 msgid "Base16 Atlas"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:299
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:303
 msgid "Base16 Bespin"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:300
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:304
 msgid "Base16 Black Metal Bathory"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:301
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:305
 msgid "Base16 Black Metal Burzum"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:302
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:306
 msgid "Base16 Black Metal Dark Funeral"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:303
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:307
 msgid "Base16 Black Metal Gorgoroth"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:304
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:308
 msgid "Base16 Black Metal Immortal"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:305
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:309
 msgid "Base16 Black Metal Khold"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:306
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:310
 msgid "Base16 Black Metal Marduk"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:307
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:311
 msgid "Base16 Black Metal Mayhem"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:308
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:312
 msgid "Base16 Black Metal Nile"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:309
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:313
 msgid "Base16 Black Metal Venom"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:310
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:314
 msgid "Base16 Black Metal"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:311
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:315
 msgid "Base16 Brewer"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:312
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:316
 msgid "Base16 Bright"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:313
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:317
 msgid "Base16 Brogrammer"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:314
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:318
 msgid "Base16 BrushTrees Dark"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:315
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:319
 msgid "Base16 Brush Trees"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:316
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:320
 msgid "Base16 Chalk"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:317
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:321
 msgid "Base16 Circus"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:318
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:322
 msgid "Base16 Classic Dark"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:319
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:323
 msgid "Base16 Classic Light"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:320
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:324
 msgid "Base16 Codeschool"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:321
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:325
 msgid "Base16 Colors"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:322
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:326
 msgid "Base16 Cupcake"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:323
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:327
 msgid "Base16 Cupertino"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:324
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:328
 msgid "Base16 Danqing"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:325
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:329
 msgid "Base16 Darcula"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:326
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:330
 msgid "Base16 Dark Violet"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:327
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:331
 msgid "Base16 Darkmoss"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:328
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:332
 msgid "Base16 Darktooth"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:329
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:333
 msgid "Base16 Decaf"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:330
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:334
 msgid "Base16 Default Dark"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:331
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:335
 msgid "Base16 Default Light"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:332
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:336
 msgid "Base16 Dirtysea"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:333
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:337
 msgid "Base16 Dracula"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:334
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:338
 msgid "Base16 Edge Dark"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:335
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:339
 msgid "Base16 Edge Light"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:336
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:340
 msgid "Base16 Eighties"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:337
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:341
 msgid "Base16 Embers"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:338
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:342
 msgid "Base16 Equilibrium Dark"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:339
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:343
 msgid "Base16 Equilibrium Gray Dark"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:340
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:344
 msgid "Base16 Equilibrium Gray Light"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:341
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:345
 msgid "Base16 Equilibrium Light"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:342
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:346
 msgid "Base16 Espresso"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:343
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:347
 msgid "Base16 Eva Dim"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:344
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:348
 msgid "Base16 Eva"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:345
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:349
 msgid "Base16 Flat"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:346
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:350
 msgid "Base16 Framer"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:347
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:351
 msgid "Base16 Fruit Soda"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:348
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:352
 msgid "Base16 Gigavolt"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:349
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:353
 msgid "Base16 Github"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:350
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:354
 msgid "Base16 Google Dark"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:351
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:355
 msgid "Base16 Google Light"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:352
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:356
 msgid "Base16 Grayscale Dark"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:353
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:357
 msgid "Base16 Grayscale Light"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:354
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:358
 msgid "Base16 Green Screen"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:355
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:359
 msgid "Base16 Gruvbox Dark Hard"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:356
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:360
 msgid "Base16 Gruvbox Dark Medium"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:357
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:361
 msgid "Base16 Gruvbox Dark Pale"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:358
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:362
 msgid "Base16 Gruvbox Dark Soft"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:359
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:363
 msgid "Base16 Gruvbox Light Hard"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:360
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:364
 msgid "Base16 Gruvbox Light Medium"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:361
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:365
 msgid "Base16 Gruvbox Light Soft"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:362
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:366
 msgid "Base16 Hardcore"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:363
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:367
 msgid "Base16 Harmonic16 Dark"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:364
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:368
 msgid "Base16 Harmonic16 Light"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:365
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:369
 msgid "Base16 Heetch Dark"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:366
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:370
 msgid "Base16 Heetch Light"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:367
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:371
 msgid "Base16 Helios"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:368
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:372
 msgid "Base16 Hopscotch"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:369
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:373
 msgid "Base16 Horizon Dark"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:370
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:374
 msgid "Base16 Horizon Light"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:371
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:375
 msgid "Base16 Humanoid Dark"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:372
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:376
 msgid "Base16 Humanoid Light"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:373
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:377
 msgid "Base16 IA Dark"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:374
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:378
 msgid "Base16 IA Light"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:375
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:379
 msgid "Base16 Icy Dark"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:376
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:380
 msgid "Base16 IR Black"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:377
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:381
 msgid "Base16 Isotope"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:378
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:382
 msgid "Base16 Kimber"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:379
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:383
 msgid "Base16 London Tube"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:380
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:384
 msgid "Base16 Macintosh"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:381
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:385
 msgid "Base16 Marrakesh"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:382
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:386
 msgid "Base16 Materia"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:383
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:387
 msgid "Base16 Material Darker"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:384
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:388
 msgid "Base16 Material Lighter"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:385
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:389
 msgid "Base16 Material Palenight"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:386
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:390
 msgid "Base16 Material Vivid"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:387
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:391
 msgid "Base16 Material"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:388
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:392
 msgid "Base16 Mellow Purple"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:389
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:393
 msgid "Base16 Mexico Light"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:390
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:394
 msgid "Base16 Mocha"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:391
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:395
 msgid "Base16 Monokai"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:392
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:396
 msgid "Base16 Nebula"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:393
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:397
 msgid "Base16 Nord"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:394
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:398
 msgid "Base16 Nova"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:395
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:399
 msgid "Base16 Ocean"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:396
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:400
 msgid "Base16 Oceanicnext"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:397
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:401
 msgid "Base16 One Light"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:398
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:402
 msgid "Base16 Onedark"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:399
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:403
 msgid "Base16 Outrun Dark"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:400
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:404
 msgid "Base16 Papercolor Dark"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:401
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:405
 msgid "Base16 Papercolor Light"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:402
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:406
 msgid "Base16 Paraiso"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:403
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:407
 msgid "Base16 Pasque"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:404
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:408
 msgid "Base16 Phd"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:405
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:409
 msgid "Base16 Pico"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:406
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:410
 msgid "Base16 Pop"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:407
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:411
 msgid "Base16 Porple"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:408
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:412
 msgid "Base16 Qualia"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:409
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:413
 msgid "Base16 Railscasts"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:410
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:414
 msgid "Base16 Rebecca"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:411
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:415
 msgid "Base16 Ros Pine Dawn"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:412
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:416
 msgid "Base16 Ros Pine Moon"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:413
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:417
 msgid "Base16 Ros Pine"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:414
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:418
 msgid "Base16 Sagelight"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:415
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:419
 msgid "Base16 Sandcastle"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:416
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:420
 msgid "Base16 Seti UI"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:417
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:421
 msgid "Base16 Shapeshifter"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:418
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:422
 msgid "Base16 Silk Dark"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:419
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:423
 msgid "Base16 Silk Light"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:420
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:424
 msgid "Base16 Snazzy"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:421
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:425
 msgid "Base16 Solar Flare Light"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:422
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:426
 msgid "Base16 Solar Flare"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:423
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:427
 msgid "Base16 Solarized Dark"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:424
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:428
 msgid "Base16 Solarized Light"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:425
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:429
 msgid "Base16 Spacemacs"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:426
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:430
 msgid "Base16 Summercamp"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:427
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:431
 msgid "Base16 Summerfruit Dark"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:428
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:432
 msgid "Base16 Summerfruit Light"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:429
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:433
 msgid "Base16 Synth Midnight Terminal Dark"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:430
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:434
 msgid "Base16 Synth Midnight Terminal Light"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:431
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:435
 msgid "Base16 Tango"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:432
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:436
 msgid "Base16 Tender"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:433
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:437
 msgid "Base16 Tomorrow Night"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:434
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:438
 msgid "Base16 Tomorrow"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:435
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:439
 msgid "Base16 Twilight"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:436
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:440
 msgid "Base16 Unikitty Dark"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:437
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:441
 msgid "Base16 Unikitty Light"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:438
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:442
 msgid "Base16 Vulcan"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:439
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:443
 msgid "Base16 Windows 10 Light"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:440
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:444
 msgid "Base16 Windows 10"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:441
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:445
 msgid "Base16 Windows 95 Light"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:442
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:446
 msgid "Base16 Windows 95"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:443
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:447
 msgid "Base16 Windows High Contrast Light"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:444
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:448
 msgid "Base16 Windows High Contrast"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:445
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:449
 msgid "Base16 Windows NT Light"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:446
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:450
 msgid "Base16 Windows NT"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:447
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:451
 msgid "Base16 Woodland"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:448
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:452
 msgid "Base16 XCode Dusk"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:449
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:453
 msgid "Base16 Zenburn"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:450
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:454
 msgid "Brown Paper"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:451
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:455
 msgid "Codepen Embed"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:452
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:456
 msgid "Color Brewer"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:453
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:457
 msgid "Cybertopia Cherry"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:454
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:458
 msgid "Cybertopia Dimmer"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:455
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:459
 msgid "Cybertopia Icecap"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:456
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:460
 msgid "Cybertopia Saturated"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:458
-#: MarkupMarkdown/Addons/Unsupported/SpellChecker.php:531
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:462
+#: MarkupMarkdown/Addons/Unsupported/SpellChecker.php:536
 msgid "Default"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:459
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:463
 msgid "Devibeans"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:460
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:464
 msgid "Docco"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:461
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:465
 msgid "Far"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:462
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:466
 msgid "Felipec"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:464
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:467
+msgid "Foundation"
+msgstr ""
+
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:468
 msgid "Github Dark Dimmed"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:465
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:469
 msgid "Github Dark"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:466
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:470
 msgid "Github"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:467
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:471
 msgid "GML"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:468
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:472
 msgid "Googlecode"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:469
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:473
 msgid "Gradient Dark"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:470
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:474
 msgid "Gradient light"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:471
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:475
 msgid "Grayscale"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:472
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:476
 msgid "Hybrid"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:473
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:477
 msgid "Idea"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:474
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:478
 msgid "Intellij Light"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:475
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:479
 msgid "IR Black"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:476
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:480
 msgid "ISBL Editor Dark"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:477
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:481
 msgid "ISBL Editor Light"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:478
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:482
 msgid "Kimbie Dark"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:479
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:483
 msgid "Kimbie Light"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:480
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:484
 msgid "Lightfair"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:481
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:485
 msgid "Lioshi"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:482
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:486
 msgid "Magula"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:483
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:487
 msgid "Mono Blue"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:484
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:488
 msgid "Monokai Sublime"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:485
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:489
 msgid "Monokai"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:487
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:491
 msgid "NNFX Dark"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:488
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:492
 msgid "NNFX light"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:489
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:493
 msgid "Nord"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:490
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:494
 msgid "Obsidian"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:491
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:495
 msgid "Panda Syntax Dark"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:492
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:496
 msgid "Panda Syntax Light"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:493
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:497
 msgid "Paraiso Dark"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:494
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:498
 msgid "Paraiso Light"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:496
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:500
 msgid "Purebasic"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:497
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:501
 msgid "QTCreator Dark"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:498
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:502
 msgid "QTCreator Light"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:499
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:503
 msgid "Rainbow"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:500
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:504
 msgid "Rose Pine Dawn"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:501
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:505
 msgid "Rose Pine Moon"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:502
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:506
 msgid "Rose Pine"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:503
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:507
 msgid "Routeros"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:504
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:508
 msgid "School Book"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:505
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:509
 msgid "Shades of Purple"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:506
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:510
 msgid "Srcery"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:507
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:511
 msgid "Stackoverflow Dark"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:508
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:512
 msgid "Stackoverflow Light"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:509
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:513
 msgid "Sunburst"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:510
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:514
 msgid "Tokyo Night Dark"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:511
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:515
 msgid "Tokyo Night Light"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:512
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:516
 msgid "Tomorrow Night Blue"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:513
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:517
 msgid "Tomorrow Night Bright"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:514
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:518
 msgid "VS"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:515
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:519
 msgid "VS2015"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:516
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:520
 msgid "XCode"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/CodeHighlighter.php:517
+#: MarkupMarkdown/Addons/Released/class-codehighlighter.php:521
 msgid "XT256"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/Comments.php:88
-#: MarkupMarkdown/Addons/Released/Comments.php:142
-#: MarkupMarkdown/Addons/Released/Templates/CommentsForm.php:5
+#: MarkupMarkdown/Addons/Released/class-comments.php:93
+#: MarkupMarkdown/Addons/Released/class-comments.php:147
+#: MarkupMarkdown/Addons/Released/Templates/tmpl-commentsform.php:5
 msgid "Comments"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/Comments.php:144
+#: MarkupMarkdown/Addons/Released/class-comments.php:149
 msgid "Use markdown inside your comments"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/Debug.php:41
+#: MarkupMarkdown/Addons/Released/class-debug.php:46
 msgid "Debug"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/EngineEasyMDE.php:69
+#: MarkupMarkdown/Addons/Released/class-engineeasymde.php:73
 msgid "EasyMde WYSIWYG"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/EngineEasyMDE.php:71
+#: MarkupMarkdown/Addons/Released/class-engineeasymde.php:75
 msgid "The default Markdown Editor."
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/EngineEasyMDE.php:285
-#: MarkupMarkdown/Addons/Released/Media/ToolbarEasyMDE.php:171
+#: MarkupMarkdown/Addons/Released/class-engineeasymde.php:290
+#: MarkupMarkdown/Addons/Released/Media/class-toolbareasymde.php:175
 msgid "Pipe"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/EngineEasyMDE.php:286
-#: MarkupMarkdown/Addons/Released/Media/ToolbarEasyMDE.php:172
-#: MarkupMarkdown/Addons/Released/Media/ToolbarEasyMDE.php:173
+#: MarkupMarkdown/Addons/Released/class-engineeasymde.php:291
+#: MarkupMarkdown/Addons/Released/Media/class-toolbareasymde.php:176
+#: MarkupMarkdown/Addons/Released/Media/class-toolbareasymde.php:177
 msgid "Bold"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/EngineEasyMDE.php:287
-#: MarkupMarkdown/Addons/Released/Media/ToolbarEasyMDE.php:174
-#: MarkupMarkdown/Addons/Released/Media/ToolbarEasyMDE.php:175
+#: MarkupMarkdown/Addons/Released/class-engineeasymde.php:292
+#: MarkupMarkdown/Addons/Released/Media/class-toolbareasymde.php:178
+#: MarkupMarkdown/Addons/Released/Media/class-toolbareasymde.php:179
 msgid "Italic"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/EngineEasyMDE.php:288
-#: MarkupMarkdown/Addons/Released/Media/ToolbarEasyMDE.php:176
-#: MarkupMarkdown/Addons/Released/Media/ToolbarEasyMDE.php:177
+#: MarkupMarkdown/Addons/Released/class-engineeasymde.php:293
+#: MarkupMarkdown/Addons/Released/Media/class-toolbareasymde.php:180
+#: MarkupMarkdown/Addons/Released/Media/class-toolbareasymde.php:181
 msgid "Strikethrough"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/EngineEasyMDE.php:289
-#: MarkupMarkdown/Addons/Released/Media/ToolbarEasyMDE.php:178
-#: MarkupMarkdown/Addons/Released/Media/ToolbarEasyMDE.php:179
+#: MarkupMarkdown/Addons/Released/class-engineeasymde.php:294
+#: MarkupMarkdown/Addons/Released/Media/class-toolbareasymde.php:182
+#: MarkupMarkdown/Addons/Released/Media/class-toolbareasymde.php:183
 msgid "Heading"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/EngineEasyMDE.php:290
-#: MarkupMarkdown/Addons/Released/Media/ToolbarEasyMDE.php:180
-#: MarkupMarkdown/Addons/Released/Media/ToolbarEasyMDE.php:181
+#: MarkupMarkdown/Addons/Released/class-engineeasymde.php:295
+#: MarkupMarkdown/Addons/Released/Media/class-toolbareasymde.php:184
+#: MarkupMarkdown/Addons/Released/Media/class-toolbareasymde.php:185
 msgid "Smaller Heading"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/EngineEasyMDE.php:291
-#: MarkupMarkdown/Addons/Released/Media/ToolbarEasyMDE.php:182
-#: MarkupMarkdown/Addons/Released/Media/ToolbarEasyMDE.php:183
+#: MarkupMarkdown/Addons/Released/class-engineeasymde.php:296
+#: MarkupMarkdown/Addons/Released/Media/class-toolbareasymde.php:186
+#: MarkupMarkdown/Addons/Released/Media/class-toolbareasymde.php:187
 msgid "Bigger Heading"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/EngineEasyMDE.php:292
-#: MarkupMarkdown/Addons/Released/Media/ToolbarEasyMDE.php:184
-#: MarkupMarkdown/Addons/Released/Media/ToolbarEasyMDE.php:185
+#: MarkupMarkdown/Addons/Released/class-engineeasymde.php:297
+#: MarkupMarkdown/Addons/Released/Media/class-toolbareasymde.php:188
+#: MarkupMarkdown/Addons/Released/Media/class-toolbareasymde.php:189
 msgid "Big Heading"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/EngineEasyMDE.php:293
-#: MarkupMarkdown/Addons/Released/Media/ToolbarEasyMDE.php:186
-#: MarkupMarkdown/Addons/Released/Media/ToolbarEasyMDE.php:187
+#: MarkupMarkdown/Addons/Released/class-engineeasymde.php:298
+#: MarkupMarkdown/Addons/Released/Media/class-toolbareasymde.php:190
+#: MarkupMarkdown/Addons/Released/Media/class-toolbareasymde.php:191
 msgid "Medium Heading"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/EngineEasyMDE.php:294
-#: MarkupMarkdown/Addons/Released/Media/ToolbarEasyMDE.php:188
-#: MarkupMarkdown/Addons/Released/Media/ToolbarEasyMDE.php:189
+#: MarkupMarkdown/Addons/Released/class-engineeasymde.php:299
+#: MarkupMarkdown/Addons/Released/Media/class-toolbareasymde.php:192
+#: MarkupMarkdown/Addons/Released/Media/class-toolbareasymde.php:193
 msgid "Small Heading"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/EngineEasyMDE.php:295
-#: MarkupMarkdown/Addons/Released/Media/ToolbarEasyMDE.php:190
-#: MarkupMarkdown/Addons/Released/Media/ToolbarEasyMDE.php:191
+#: MarkupMarkdown/Addons/Released/class-engineeasymde.php:300
+#: MarkupMarkdown/Addons/Released/Media/class-toolbareasymde.php:194
+#: MarkupMarkdown/Addons/Released/Media/class-toolbareasymde.php:195
 msgid "Code"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/EngineEasyMDE.php:296
-#: MarkupMarkdown/Addons/Released/Media/ToolbarEasyMDE.php:192
-#: MarkupMarkdown/Addons/Released/Media/ToolbarEasyMDE.php:193
+#: MarkupMarkdown/Addons/Released/class-engineeasymde.php:301
+#: MarkupMarkdown/Addons/Released/Media/class-toolbareasymde.php:196
+#: MarkupMarkdown/Addons/Released/Media/class-toolbareasymde.php:197
 msgid "Quote"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/EngineEasyMDE.php:297
-#: MarkupMarkdown/Addons/Released/Media/ToolbarEasyMDE.php:194
+#: MarkupMarkdown/Addons/Released/class-engineeasymde.php:302
+#: MarkupMarkdown/Addons/Released/Media/class-toolbareasymde.php:198
 msgid "Generic List"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/EngineEasyMDE.php:298
-#: MarkupMarkdown/Addons/Released/Media/ToolbarEasyMDE.php:196
+#: MarkupMarkdown/Addons/Released/class-engineeasymde.php:303
+#: MarkupMarkdown/Addons/Released/Media/class-toolbareasymde.php:200
 msgid "Numbered List"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/EngineEasyMDE.php:299
-#: MarkupMarkdown/Addons/Released/Media/ToolbarEasyMDE.php:198
+#: MarkupMarkdown/Addons/Released/class-engineeasymde.php:304
+#: MarkupMarkdown/Addons/Released/Media/class-toolbareasymde.php:202
 msgid "Clean block"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/EngineEasyMDE.php:300
-#: MarkupMarkdown/Addons/Released/Media/ToolbarEasyMDE.php:200
+#: MarkupMarkdown/Addons/Released/class-engineeasymde.php:305
+#: MarkupMarkdown/Addons/Released/Media/class-toolbareasymde.php:204
 msgid "Create Link"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/EngineEasyMDE.php:301
-#: MarkupMarkdown/Addons/Released/Media/ToolbarEasyMDE.php:202
+#: MarkupMarkdown/Addons/Released/class-engineeasymde.php:306
+#: MarkupMarkdown/Addons/Released/Media/class-toolbareasymde.php:206
 msgid "Insert or Upload Media"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/EngineEasyMDE.php:302
-#: MarkupMarkdown/Addons/Released/Media/ToolbarEasyMDE.php:204
+#: MarkupMarkdown/Addons/Released/class-engineeasymde.php:307
+#: MarkupMarkdown/Addons/Released/Media/class-toolbareasymde.php:208
 msgid "Insert Table"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/EngineEasyMDE.php:303
-#: MarkupMarkdown/Addons/Released/Media/ToolbarEasyMDE.php:206
+#: MarkupMarkdown/Addons/Released/class-engineeasymde.php:308
+#: MarkupMarkdown/Addons/Released/Media/class-toolbareasymde.php:210
 msgid "Insert Horizontal Line"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/EngineEasyMDE.php:304
-#: MarkupMarkdown/Addons/Released/Media/ToolbarEasyMDE.php:208
+#: MarkupMarkdown/Addons/Released/class-engineeasymde.php:309
+#: MarkupMarkdown/Addons/Released/Media/class-toolbareasymde.php:212
 msgid "Toggle Preview"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/EngineEasyMDE.php:305
-#: MarkupMarkdown/Addons/Released/Media/ToolbarEasyMDE.php:210
+#: MarkupMarkdown/Addons/Released/class-engineeasymde.php:310
+#: MarkupMarkdown/Addons/Released/Media/class-toolbareasymde.php:214
 msgid "Toggle Side by Side"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/EngineEasyMDE.php:306
-#: MarkupMarkdown/Addons/Released/Media/ToolbarEasyMDE.php:212
+#: MarkupMarkdown/Addons/Released/class-engineeasymde.php:311
+#: MarkupMarkdown/Addons/Released/Media/class-toolbareasymde.php:216
 msgid "Toggle Fullscreen"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/EngineEasyMDE.php:307
-#: MarkupMarkdown/Addons/Released/Media/ToolbarEasyMDE.php:214
+#: MarkupMarkdown/Addons/Released/class-engineeasymde.php:312
+#: MarkupMarkdown/Addons/Released/Media/class-toolbareasymde.php:218
 msgid "Markdown Guide"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/EngineEasyMDE.php:308
-#: MarkupMarkdown/Addons/Released/Media/ToolbarEasyMDE.php:216
-#: MarkupMarkdown/Addons/Released/Media/ToolbarEasyMDE.php:217
+#: MarkupMarkdown/Addons/Released/class-engineeasymde.php:313
+#: MarkupMarkdown/Addons/Released/Media/class-toolbareasymde.php:220
+#: MarkupMarkdown/Addons/Released/Media/class-toolbareasymde.php:221
 msgid "Undo"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/EngineEasyMDE.php:309
-#: MarkupMarkdown/Addons/Released/Media/ToolbarEasyMDE.php:218
-#: MarkupMarkdown/Addons/Released/Media/ToolbarEasyMDE.php:219
+#: MarkupMarkdown/Addons/Released/class-engineeasymde.php:314
+#: MarkupMarkdown/Addons/Released/Media/class-toolbareasymde.php:222
+#: MarkupMarkdown/Addons/Released/Media/class-toolbareasymde.php:223
 msgid "Redo"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/EngineEasyMDE.php:310
-#: MarkupMarkdown/Addons/Released/Media/ToolbarEasyMDE.php:220
-#: MarkupMarkdown/Addons/Released/Media/ToolbarEasyMDE.php:221
+#: MarkupMarkdown/Addons/Released/class-engineeasymde.php:315
+#: MarkupMarkdown/Addons/Released/Media/class-toolbareasymde.php:224
+#: MarkupMarkdown/Addons/Released/Media/class-toolbareasymde.php:225
 msgid "Spellchecker"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/LaTeX.php:52
-#: MarkupMarkdown/Addons/Released/LaTeX.php:109
-#: MarkupMarkdown/Addons/Released/Templates/LaTeXForm.php:4
+#: MarkupMarkdown/Addons/Released/class-latex.php:56
+#: MarkupMarkdown/Addons/Released/class-latex.php:113
+#: MarkupMarkdown/Addons/Released/Templates/tmpl-latexform.php:4
 msgid "LaTeX"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/LaTeX.php:54
-#: MarkupMarkdown/Addons/Released/Templates/LaTeXForm.php:5
+#: MarkupMarkdown/Addons/Released/class-latex.php:58
+#: MarkupMarkdown/Addons/Released/Templates/tmpl-latexform.php:5
 msgid "Easily type and render math formulas inside your post."
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/Layout.php:70
-#: MarkupMarkdown/Addons/Released/Layout.php:147
-#: MarkupMarkdown/Addons/Released/Templates/LayoutForm.php:4
+#: MarkupMarkdown/Addons/Released/class-layout.php:76
+#: MarkupMarkdown/Addons/Released/class-layout.php:160
+#: MarkupMarkdown/Addons/Released/Templates/tmpl-layoutform.php:4
 msgid "Layout"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/Layout.php:72
+#: MarkupMarkdown/Addons/Released/class-layout.php:78
 msgid "A few tools to help you enhancing your layout. (Lightbox, Masonry, etc...)"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/Media/Image.php:48
+#: MarkupMarkdown/Addons/Released/Media/class-image.php:53
 msgid "Responsive Image"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/Media/Image.php:50
+#: MarkupMarkdown/Addons/Released/Media/class-image.php:55
 msgid "Add basic html code syntax for responsive media."
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/Media/ToolbarEasyMDE.php:195
-#: MarkupMarkdown/Addons/Released/Media/ToolbarEasyMDE.php:197
+#: MarkupMarkdown/Addons/Released/Media/class-toolbareasymde.php:199
+#: MarkupMarkdown/Addons/Released/Media/class-toolbareasymde.php:201
 msgid "List"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/Media/ToolbarEasyMDE.php:199
+#: MarkupMarkdown/Addons/Released/Media/class-toolbareasymde.php:203
 msgid "Clean"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/Media/ToolbarEasyMDE.php:201
+#: MarkupMarkdown/Addons/Released/Media/class-toolbareasymde.php:205
 msgid "Link"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/Media/ToolbarEasyMDE.php:203
+#: MarkupMarkdown/Addons/Released/Media/class-toolbareasymde.php:207
 msgid "Media Library"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/Media/ToolbarEasyMDE.php:205
+#: MarkupMarkdown/Addons/Released/Media/class-toolbareasymde.php:209
 msgid "Table"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/Media/ToolbarEasyMDE.php:207
+#: MarkupMarkdown/Addons/Released/Media/class-toolbareasymde.php:211
 msgid "Horizontal Line"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/Media/ToolbarEasyMDE.php:209
+#: MarkupMarkdown/Addons/Released/Media/class-toolbareasymde.php:213
 msgid "Preview"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/Media/ToolbarEasyMDE.php:211
+#: MarkupMarkdown/Addons/Released/Media/class-toolbareasymde.php:215
 msgid "Side by Side"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/Media/ToolbarEasyMDE.php:213
+#: MarkupMarkdown/Addons/Released/Media/class-toolbareasymde.php:217
 msgid "Fullscreen"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/Media/ToolbarEasyMDE.php:215
+#: MarkupMarkdown/Addons/Released/Media/class-toolbareasymde.php:219
 msgid "Guide"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/Media/ToolbarEasyMDE.php:222
+#: MarkupMarkdown/Addons/Released/Media/class-toolbareasymde.php:226
 msgid "Switch text direction to right"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/Media/ToolbarEasyMDE.php:223
+#: MarkupMarkdown/Addons/Released/Media/class-toolbareasymde.php:227
 msgid "Right to Left text direction"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/Media/ToolbarEasyMDE.php:224
+#: MarkupMarkdown/Addons/Released/Media/class-toolbareasymde.php:228
 msgid "Switch text direction to left"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/Media/ToolbarEasyMDE.php:225
+#: MarkupMarkdown/Addons/Released/Media/class-toolbareasymde.php:229
 msgid "Left to Right text direction"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/Media/Vimeo.php:33
+#: MarkupMarkdown/Addons/Released/Media/class-vimeo.php:37
 msgid "Vimeo"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/Media/Vimeo.php:35
+#: MarkupMarkdown/Addons/Released/Media/class-vimeo.php:39
 msgid "Convert automatically Vimeo links to an embedded iframe."
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/Media/Youtube.php:33
+#: MarkupMarkdown/Addons/Released/Media/class-youtube.php:37
 msgid "Youtube"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/Media/Youtube.php:35
+#: MarkupMarkdown/Addons/Released/Media/class-youtube.php:39
 msgid "Convert automatically Youtube links to an embedded iframe."
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/Mermaid.php:50
-#: MarkupMarkdown/Addons/Released/Mermaid.php:105
+#: MarkupMarkdown/Addons/Released/Mermaid.php:54
+#: MarkupMarkdown/Addons/Released/Mermaid.php:109
 #: MarkupMarkdown/Addons/Released/Templates/MermaidForm.php:4
 msgid "Mermaid"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/Mermaid.php:52
+#: MarkupMarkdown/Addons/Released/Mermaid.php:56
 #: MarkupMarkdown/Addons/Released/Templates/MermaidForm.php:5
 msgid "Easily display diagrams and charts inside your post."
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/OPCache.php:44
+#: MarkupMarkdown/Addons/Released/OPCache.php:48
 msgid "Disable Static Cache"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/OPCache.php:46
+#: MarkupMarkdown/Addons/Released/OPCache.php:50
 msgid "Static html files can be generated to speed up the rendering if the default PHP OPCache if available. Uncheck to enable."
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/Templates/CodehighlighterForm.php:28
-#: MarkupMarkdown/Addons/Released/Templates/LaTeXForm.php:28
+#: MarkupMarkdown/Addons/Released/Templates/tmpl-codehighlighterform.php:28
+#: MarkupMarkdown/Addons/Released/Templates/tmpl-latexform.php:28
 msgid "Rendering engine"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/Templates/CodehighlighterForm.php:33
+#: MarkupMarkdown/Addons/Released/Templates/tmpl-codehighlighterform.php:33
 msgid "Prism.js rendering (Default)"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/Templates/CodehighlighterForm.php:37
+#: MarkupMarkdown/Addons/Released/Templates/tmpl-codehighlighterform.php:37
 msgid "Highlight.js rendering"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/Templates/CodehighlighterForm.php:44
-#: MarkupMarkdown/Addons/Released/Templates/LaTeXForm.php:47
+#: MarkupMarkdown/Addons/Released/Templates/tmpl-codehighlighterform.php:39
+msgid "Dark mode not supported on the backend, Visual Studio based theme is setup by default for the admin screen and the built-in preview."
+msgstr ""
+
+#: MarkupMarkdown/Addons/Released/Templates/tmpl-codehighlighterform.php:44
+#: MarkupMarkdown/Addons/Released/Templates/tmpl-latexform.php:47
 #: MarkupMarkdown/Addons/Released/Templates/MermaidForm.php:24
 msgid "Load assets"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/Templates/CodehighlighterForm.php:49
+#: MarkupMarkdown/Addons/Released/Templates/tmpl-codehighlighterform.php:49
 msgid "Activate syntax highlighting on the frontend as well (Disabled by default)"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/Templates/CodehighlighterForm.php:50
+#: MarkupMarkdown/Addons/Released/Templates/tmpl-codehighlighterform.php:50
 msgid "Useful if your theme does not support by default syntax highlighting for code snippets."
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/Templates/CodehighlighterForm.php:56
+#: MarkupMarkdown/Addons/Released/Templates/tmpl-codehighlighterform.php:56
 msgid "Theme"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/Templates/CodehighlighterForm.php:60
+#: MarkupMarkdown/Addons/Released/Templates/tmpl-codehighlighterform.php:60
 msgid "Please select a theme"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/Templates/CodehighlighterForm.php:76
+#: MarkupMarkdown/Addons/Released/Templates/tmpl-codehighlighterform.php:76
 msgid "Dark themes are available, the selected theme will only be applied to the frontend when activated."
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/Templates/CommentsForm.php:6
+#: MarkupMarkdown/Addons/Released/Templates/tmpl-codehighlighterform.php:77
+msgid "View the previews of Prism.js themes"
+msgstr ""
+
+#: MarkupMarkdown/Addons/Released/Templates/tmpl-codehighlighterform.php:78
+msgid "Test in live Highlight.js themes"
+msgstr ""
+
+#: MarkupMarkdown/Addons/Released/Templates/tmpl-commentsform.php:6
 msgid "Use markdown inside your comments."
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/Templates/LaTeXForm.php:33
+#: MarkupMarkdown/Addons/Released/Templates/tmpl-latexform.php:33
 msgid "None"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/Templates/LaTeXForm.php:37
+#: MarkupMarkdown/Addons/Released/Templates/tmpl-latexform.php:37
 msgid "Katex rendering"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/Templates/LaTeXForm.php:41
+#: MarkupMarkdown/Addons/Released/Templates/tmpl-latexform.php:41
 msgid "Mathjax rendering"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/Templates/LaTeXForm.php:52
+#: MarkupMarkdown/Addons/Released/Templates/tmpl-latexform.php:52
 msgid "Load the LaTeX engine related assets on the frontend as well. (Only added to the edit screen by default)"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/Templates/LaTeXForm.php:56
+#: MarkupMarkdown/Addons/Released/Templates/tmpl-latexform.php:56
 msgid "Specify the ID of an HTML node to parse when a page is loaded. (Parse the whole body by default)"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/Templates/LayoutForm.php:5
+#: MarkupMarkdown/Addons/Released/Templates/tmpl-layoutform.php:5
 msgid "Here are a few settings you can change to modify the behavior of your blog posts."
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/Templates/LayoutForm.php:21
+#: MarkupMarkdown/Addons/Released/Templates/tmpl-layoutform.php:22
 msgid "Select headline weights"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/Templates/LayoutForm.php:24
+#: MarkupMarkdown/Addons/Released/Templates/tmpl-layoutform.php:25
 msgid "You can toggle specific heading levels for your authors to avoid conflicts with your theme setup. At least two weights are required."
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/Templates/LayoutForm.php:27
+#: MarkupMarkdown/Addons/Released/Templates/tmpl-layoutform.php:28
 msgid "Level 1 (H1)"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/Templates/LayoutForm.php:31
+#: MarkupMarkdown/Addons/Released/Templates/tmpl-layoutform.php:32
 msgid "Level 2 (H2)"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/Templates/LayoutForm.php:35
+#: MarkupMarkdown/Addons/Released/Templates/tmpl-layoutform.php:36
 msgid "Level 3 (H3)"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/Templates/LayoutForm.php:39
+#: MarkupMarkdown/Addons/Released/Templates/tmpl-layoutform.php:40
 msgid "Level 4 (H4)"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/Templates/LayoutForm.php:43
+#: MarkupMarkdown/Addons/Released/Templates/tmpl-layoutform.php:44
 msgid "Level 5 (H5)"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/Templates/LayoutForm.php:47
+#: MarkupMarkdown/Addons/Released/Templates/tmpl-layoutform.php:48
 msgid "Level 6 (H6)"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/Templates/LayoutForm.php:53
+#: MarkupMarkdown/Addons/Released/Templates/tmpl-layoutform.php:54
 msgid "Keep blocks features"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/Templates/LayoutForm.php:58
+#: MarkupMarkdown/Addons/Released/Templates/tmpl-layoutform.php:59
 msgid "Keep the bare minimum of assets and features from Gutenberg active if your theme was designed to be used with the official WordPress blocks editor. Not perfect but can avoid broken layout in case styles are missing."
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/Templates/LayoutForm.php:64
+#: MarkupMarkdown/Addons/Released/Templates/tmpl-layoutform.php:65
 msgid "Use Lightbox"
 msgstr ""
 
 #. translators: 1,2,3,4: used for italic tags
-#: MarkupMarkdown/Addons/Released/Templates/LayoutForm.php:71
+#: MarkupMarkdown/Addons/Released/Templates/tmpl-layoutform.php:72
 #, php-format
 msgid "An image inside a %1$spost%2$s or %1$spage%2$s that was linked to its original size will open in a modal (overlay on the same page) instead of a new window / tab."
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/Templates/LayoutForm.php:78
+#: MarkupMarkdown/Addons/Released/Templates/tmpl-layoutform.php:79
 msgid "Use Masonry"
 msgstr ""
 
 #. translators: 1,2,3,4: used for italic tags
-#: MarkupMarkdown/Addons/Released/Templates/LayoutForm.php:85
+#: MarkupMarkdown/Addons/Released/Templates/tmpl-layoutform.php:86
 #, php-format
 msgid "Transform a bullet list of images as a 2 waterfall column layout when the %1$sphoto gallery%2$s post format is selected."
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/Templates/LayoutForm.php:92
+#: MarkupMarkdown/Addons/Released/Templates/tmpl-layoutform.php:93
 msgid "Use Imagesloaded"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/Templates/LayoutForm.php:97
+#: MarkupMarkdown/Addons/Released/Templates/tmpl-layoutform.php:98
 msgid "Trigger the update of the layout after all images are loaded. Can solve specific issues in case the layout is broken with the gallery."
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/Templates/LayoutForm.php:103
+#: MarkupMarkdown/Addons/Released/Templates/tmpl-layoutform.php:104
 msgid "Extra Option"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/Templates/LayoutForm.php:108
+#: MarkupMarkdown/Addons/Released/Templates/tmpl-layoutform.php:109
+msgid "Indent Setup"
+msgstr ""
+
+#: MarkupMarkdown/Addons/Released/Templates/tmpl-layoutform.php:112
+msgid "Character: "
+msgstr ""
+
+#: MarkupMarkdown/Addons/Released/Templates/tmpl-layoutform.php:114
+msgid "Tab"
+msgstr ""
+
+#: MarkupMarkdown/Addons/Released/Templates/tmpl-layoutform.php:117
+msgid "Space"
+msgstr ""
+
+#: MarkupMarkdown/Addons/Released/Templates/tmpl-layoutform.php:118
+msgid "Size: "
+msgstr ""
+
+#: MarkupMarkdown/Addons/Released/Templates/tmpl-layoutform.php:120
+msgid "2 spaces"
+msgstr ""
+
+#: MarkupMarkdown/Addons/Released/Templates/tmpl-layoutform.php:123
+msgid "4 spaces"
+msgstr ""
+
+#: MarkupMarkdown/Addons/Released/Templates/tmpl-layoutform.php:129
 msgid "Preserve spaces"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/Templates/LayoutForm.php:113
+#: MarkupMarkdown/Addons/Released/Templates/tmpl-layoutform.php:134
 msgid "By default space characters at the beginning of each line are removed (trim), check this option to keep them."
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/Templates/LayoutForm.php:119
+#: MarkupMarkdown/Addons/Released/Templates/tmpl-layoutform.php:140
 msgid "Super Backslash"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/Templates/LayoutForm.php:124
+#: MarkupMarkdown/Addons/Released/Templates/tmpl-layoutform.php:145
 msgid "Allow the backslash character to escape <, >, [, and ] characters. (By default used by Wordpress filters for HTML tag and shortcodes)"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/Templates/LayoutForm.php:133
+#: MarkupMarkdown/Addons/Released/Templates/tmpl-layoutform.php:154
 msgid "Custom toolbar"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/Templates/LayoutForm.php:147
+#: MarkupMarkdown/Addons/Released/Templates/tmpl-layoutform.php:168
 msgid "Current Toolbar (Preview)"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/Templates/LayoutForm.php:149
+#: MarkupMarkdown/Addons/Released/Templates/tmpl-layoutform.php:170
 msgid "You can sort the buttons and remove some of them if need."
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/Templates/LayoutForm.php:177
+#: MarkupMarkdown/Addons/Released/Templates/tmpl-layoutform.php:198
 msgid "Buttons related to languages are represented as a single grey globe button, and will only be displayed if the related spell checkers are enabled."
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/Templates/LayoutForm.php:180
+#: MarkupMarkdown/Addons/Released/Templates/tmpl-layoutform.php:201
 msgid "Available Buttons"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Released/Templates/LayoutForm.php:181
+#: MarkupMarkdown/Addons/Released/Templates/tmpl-layoutform.php:202
 msgid "You can drag the following buttons and drop them to the toolbar above."
 msgstr ""
 
@@ -1696,11 +1740,11 @@ msgstr ""
 msgid "Load the Mermaid engine related assets on the frontend as well. (Only loaded on the edit screen by default)"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Unsupported/AdvancedCustomFields.php:36
+#: MarkupMarkdown/Addons/Unsupported/AdvancedCustomFields.php:41
 msgid "Advanced Custom Fields"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Unsupported/AdvancedCustomFields.php:38
+#: MarkupMarkdown/Addons/Unsupported/AdvancedCustomFields.php:43
 msgid "This addon enable a new content type so you can write directly markdown with the \"Markup Markdown\" custom field from ACF."
 msgstr ""
 
@@ -1708,88 +1752,88 @@ msgstr ""
 msgid "Error! Please enter a higher value"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Unsupported/SpellChecker.php:124
+#: MarkupMarkdown/Addons/Unsupported/SpellChecker.php:129
 msgid "Hung Spell Checker"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Unsupported/SpellChecker.php:126
+#: MarkupMarkdown/Addons/Unsupported/SpellChecker.php:131
 msgid "Multilingual spell checker for your posts! Enable live spellchecking with multiple languages while writing your articles."
 msgstr ""
 
-#: MarkupMarkdown/Addons/Unsupported/SpellChecker.php:437
-#: MarkupMarkdown/Addons/Unsupported/SpellChecker.php:453
+#: MarkupMarkdown/Addons/Unsupported/SpellChecker.php:442
+#: MarkupMarkdown/Addons/Unsupported/SpellChecker.php:458
 msgid "Spell Checker"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Unsupported/SpellChecker.php:460
+#: MarkupMarkdown/Addons/Unsupported/SpellChecker.php:465
 msgid "Dismiss this notice"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Unsupported/SpellChecker.php:464
+#: MarkupMarkdown/Addons/Unsupported/SpellChecker.php:469
 msgid "Dictionaries available from your browser (Firefox, Chrome, Edge, ...) or your operating system (Linux, Macintosh, Windows, etc ...) can't be used or accessed as it is, you need to select and install specific dictionaries to be downloaded on your server and used with the markdown editor while you input your text."
 msgstr ""
 
-#: MarkupMarkdown/Addons/Unsupported/SpellChecker.php:467
+#: MarkupMarkdown/Addons/Unsupported/SpellChecker.php:472
 msgid "Data are borrowed from 3rd parties software (Sublime, OpenOffice, Mozilla, etc ...), some languages are unavailable, and a few variants missing. Data are free to use (*GPL or similar licenses), try to contribute to the original project mostly done by volunteers if you want better spell checking."
 msgstr ""
 
-#: MarkupMarkdown/Addons/Unsupported/SpellChecker.php:471
+#: MarkupMarkdown/Addons/Unsupported/SpellChecker.php:476
 msgid "Performances"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Unsupported/SpellChecker.php:474
+#: MarkupMarkdown/Addons/Unsupported/SpellChecker.php:479
 msgid "Monolingual: Usable, performances are correct."
 msgstr ""
 
-#: MarkupMarkdown/Addons/Unsupported/SpellChecker.php:475
+#: MarkupMarkdown/Addons/Unsupported/SpellChecker.php:480
 msgid "Bilingual: Depends on your machine, can be unstable so try to use it with caution."
 msgstr ""
 
-#: MarkupMarkdown/Addons/Unsupported/SpellChecker.php:478
+#: MarkupMarkdown/Addons/Unsupported/SpellChecker.php:483
 msgid "When possible I would advise using dictionaries embedded in two languages like Russian-English."
 msgstr ""
 
-#: MarkupMarkdown/Addons/Unsupported/SpellChecker.php:479
+#: MarkupMarkdown/Addons/Unsupported/SpellChecker.php:484
 msgid "In case you need to activate multiple languages, please read the following disclaimers carefully:"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Unsupported/SpellChecker.php:483
+#: MarkupMarkdown/Addons/Unsupported/SpellChecker.php:488
 msgid "File size matters"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Unsupported/SpellChecker.php:486
+#: MarkupMarkdown/Addons/Unsupported/SpellChecker.php:491
 msgid "I don't recommend to activate more than 2 languages. Please remember that the related files (a few megabytes) will be loaded in the memory of your browser so depending on the weight of the related files AND the specification of your computer, the editor might freeze for a few seconds, especially when accessing the edit screen. Please be gentle and patient... In the worst case well you won't be able to use it and will need to disable it. Can't do better on my side."
 msgstr ""
 
-#: MarkupMarkdown/Addons/Unsupported/SpellChecker.php:490
+#: MarkupMarkdown/Addons/Unsupported/SpellChecker.php:495
 msgid "No automatic language detection"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Unsupported/SpellChecker.php:493
+#: MarkupMarkdown/Addons/Unsupported/SpellChecker.php:498
 msgid "If you activate more than one dictionary, you have to pick up one as the default. Then in the editor, new buttons for the alternative languages will be shown in the toolbar so you can select the text and flag it as a different language. The code in your content is gonna look like this: &lt;span lang=\"XXX\"&gt;My text in another language&lt;/span&gt; where XXX is the code of the language as listed below. It might not be the easiest approach, regards accessibilities specifications you should already define the language in case you are using multiple languages on the same page!"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Unsupported/SpellChecker.php:497
+#: MarkupMarkdown/Addons/Unsupported/SpellChecker.php:502
 msgid "One specific dictionary per language"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Unsupported/SpellChecker.php:500
+#: MarkupMarkdown/Addons/Unsupported/SpellChecker.php:505
 msgid "Sounds obvious, multilingual means multiple languages on the same medium. With the current interface you could try activating two variants of the same parent language, for exemple American English and British English, that won't work of course!!! (Or they will be really odd side effects)"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Unsupported/SpellChecker.php:523
+#: MarkupMarkdown/Addons/Unsupported/SpellChecker.php:528
 msgid "Active"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Unsupported/SpellChecker.php:523
+#: MarkupMarkdown/Addons/Unsupported/SpellChecker.php:528
 msgid "Installed, check to activate"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Unsupported/SpellChecker.php:533
+#: MarkupMarkdown/Addons/Unsupported/SpellChecker.php:538
 msgid "Make default"
 msgstr ""
 
-#: MarkupMarkdown/Addons/Unsupported/SpellChecker.php:544
+#: MarkupMarkdown/Addons/Unsupported/SpellChecker.php:549
 msgid "Install"
 msgstr ""
 
@@ -1806,15 +1850,15 @@ msgstr ""
 msgid "Activated"
 msgstr ""
 
-#: MarkupMarkdown/Core/Activation.php:87
+#: MarkupMarkdown/Core/Activation.php:89
 msgid "Buy me a coffee"
 msgstr ""
 
-#: MarkupMarkdown/Core/Activation.php:88
+#: MarkupMarkdown/Core/Activation.php:90
 msgid "Support"
 msgstr ""
 
-#: MarkupMarkdown/Core/Activation.php:89
+#: MarkupMarkdown/Core/Activation.php:91
 msgid "Rate this plugin »"
 msgstr ""
 
